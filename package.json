@@ -1,0 +1,16 @@
+{
+  "name": "design-tooltik-cn",
+  "version": "1.0.0",
+  "description": "基于国人使用体验的设计软件开发工具包",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["figma","mastergo","jsdesign","tooltik"],
+  "author": "RiverRay",
+  "license": "MIT"
+}
