@@ -7,10 +7,26 @@
   "engines": {
     "node": ">=16"
   },
+  "packageManager": "pnpm@7.16.1",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["figma","mastergo","jsdesign","tooltik"],
+  "keywords": [
+    "figma",
+    "mastergo",
+    "jsdesign",
+    "tooltik"
+  ],
   "author": "RiverRay",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "vite": "^2.9.15",
+    "vite-node": "^0.17.1",
+    "vitest": "^0.18.1",
+    "@antfu/eslint-config": "^0.25.2",
+    "@mastergo/plugin-typings": "^1.3.1",
+    "eslint": "^8.25.0",
+    "typescript": "^4.8.4",
+    "terser": "^5.15.1"
+  }
 }
