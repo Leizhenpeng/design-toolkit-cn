@@ -1,0 +1,35 @@
+{
+    "name": "kiss",
+    "version": "1.0.0",
+    "description": "同时兼容mastergo、jsdesign和figma的插件开发框架",
+    "main": "index.js",
+    "type": "module",
+    "author": "RiverRay",
+    "license": "MIT",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Leizhenpeng/design-tooltik-cn.git",
+        "directory": "packages/kiss"
+    },
+    "bugs": {
+        "url": "https://github.com/Leizhenpeng/design-tooltik-cn/issues"
+    },
+    "homepage": "https://github.com/Leizhenpeng/design-tooltik-cn/tree/main/packages/kiss#readme",
+    "scripts": {
+        "dev": "tsup-node --watch src",
+        "build": "tsup-node --dts",
+        "test": "vitest",
+        "test:coverage": "vitest --coverage"
+    },
+    "keywords": [
+        "figma",
+        "mastergo",
+        "jsdesign",
+        "tooltik"
+    ],
+    "devDependencies": {
+        "tsup": "^6.5.0"
+    }
+}
