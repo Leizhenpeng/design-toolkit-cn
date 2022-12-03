@@ -4,7 +4,7 @@
 
 
 
-### Figma And His Friends
+### Figma With His Friends
 
 
 - [kiss]() - 同时兼容mastergo、jsdesign和figma的插件开发框架

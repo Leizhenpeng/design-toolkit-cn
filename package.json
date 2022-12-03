@@ -1,32 +1,46 @@
 {
-  "name": "design-tooltik-cn",
-  "version": "1.0.0",
-  "description": "基于国人使用体验的设计软件开发工具包",
-  "main": "index.js",
-  "type": "module",
-  "engines": {
-    "node": ">=16"
-  },
-  "packageManager": "pnpm@7.16.1",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "figma",
-    "mastergo",
-    "jsdesign",
-    "tooltik"
-  ],
-  "author": "RiverRay",
-  "license": "MIT",
-  "dependencies": {
-    "vite": "^2.9.15",
-    "vite-node": "^0.17.1",
-    "vitest": "^0.18.1",
-    "@antfu/eslint-config": "^0.25.2",
-    "@mastergo/plugin-typings": "^1.3.1",
-    "eslint": "^8.25.0",
-    "typescript": "^4.8.4",
-    "terser": "^5.15.1"
-  }
+    "name": "design-tooltik-cn",
+    "version": "1.0.0",
+    "description": "基于国人使用体验的设计软件开发工具包",
+    "main": "index.js",
+    "type": "module",
+    "engines": {
+        "node": ">=16"
+    },
+    "packageManager": "pnpm@7.16.1",
+    "scripts": {
+        "test": "pnpm -r --workspace-concurrency=1 test",
+        "lint": "eslint --ignore-path .gitignore '**/*.{js,ts,html,md}'",
+        "lint:fix": "pnpm run lint --fix",
+        "prepare": "husky install"
+    },
+    "keywords": [
+        "figma",
+        "mastergo",
+        "jsdesign",
+        "tooltik"
+    ],
+    "author": "RiverRay",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "@antfu/eslint-config": "^0.33.0",
+        "@mastergo/plugin-typings": "^1.3.1",
+        "eslint": "^8.25.0",
+        "terser": "^5.15.1",
+        "typescript": "^4.8.4",
+        "vite": "^2.9.15",
+        "vite-node": "^0.17.1",
+        "vitest": "^0.18.1",
+        "husky": "^8.0.2",
+        "lint-staged": "^13.0.4"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,ts,html,md}": "eslint --fix"
+    }
 }
