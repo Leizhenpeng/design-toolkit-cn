@@ -4,6 +4,8 @@
         "outDir": "dist",
         "useDefineForClassFields": true,
         "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "strictPropertyInitialization": false,
         "module": "esnext",
         "moduleResolution": "node",
         "strict": true,
@@ -12,15 +14,33 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "esModuleInterop": true,
-        "lib": ["esnext", "dom"],
+        "lib": [
+            "esnext",
+            "dom"
+        ],
         "skipLibCheck": true,
         "allowJs": true,
-        "types": ["vite/client", "vitest/importMeta"],
+        "types": [
+            "vite/client",
+            "vitest/importMeta",
+            "@mastergo/plugin-typings/dist/index",
+            "@figma/plugin-typings",
+            "@jsdesigndeveloper/plugin-typings",
+        ],
         "baseUrl": ".",
         "paths": {
-            "~/*": ["src/*"]
+            "~/*": [
+                "src/*"
+            ]
         }
     },
-    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "*.d.ts"],
-    "exclude": ["**/*.spec.ts"]
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "*.d.ts"
+    ],
+    "exclude": [
+        "**/*.spec.ts"
+    ]
 }

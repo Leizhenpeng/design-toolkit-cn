@@ -29,6 +29,11 @@
         "jsdesign",
         "tooltik"
     ],
+    "dependencies": {
+        "@figma/plugin-typings": "^1.56.0",
+        "@jsdesigndeveloper/plugin-typings": "^1.0.9",
+        "@mastergo/plugin-typings": "^1.3.1"
+    },
     "devDependencies": {
         "tsup": "^6.5.0"
     }
