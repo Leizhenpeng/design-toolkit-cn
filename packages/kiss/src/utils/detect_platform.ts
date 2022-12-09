@@ -1,4 +1,7 @@
+import { UiClientEnum } from '~/types'
+
 /**
+import { UiClientEnum } from '~/types';
  * @name: detect_platform.ts
  * @author: river
  * @date: 2022/12/3 7:17 PM
@@ -13,6 +16,20 @@ export class Detect_platform {
 
   get if_unknown_platform() {
     return this.platform === 'unknown'
+  }
+
+  if_ui() {
+    // windows if exist
+    // console.log('window', location.ancestorOrigins[0])
+    let result = false
+    try {
+      if (window)
+        result = true
+    }
+    catch {
+      result = false
+    }
+    return result
   }
 
   if_js_design() {
@@ -51,6 +68,23 @@ export class Detect_platform {
     return result
   }
 
+  get host() {
+    if (!this.parse_platform().match(/ui/))
+      return ''
+    return location.ancestorOrigins[0]
+  }
+
+  get ui_client() {
+    if (this.host.match(/mastergo\.com/))
+      return UiClientEnum.mg
+    else if (this.host.match(/figma\.com/))
+      return UiClientEnum.figma
+    else if (this.host.match(/js\.design/))
+      return UiClientEnum.jsDesign
+    else
+      return UiClientEnum.unknown
+  }
+
   parse_platform() {
     let result
     if (this.if_mg())
@@ -59,6 +93,8 @@ export class Detect_platform {
       result = 'jsDesign'
     else if (this.if_figma())
       result = 'figma'
+    else if (this.if_ui())
+      result = 'ui'
     else
       result = 'unknown'
     return result

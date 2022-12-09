@@ -5,10 +5,12 @@ export function add(a: number, b: number): number {
   return a + b + 12
 }
 
-const kiss = new Kiss().initClient()
+const kiss = new Kiss()
+const _client = kiss.inUi ? {} : kiss.client
+const client = Object.create(_client)
+client.prototype = client
 
-const kiss_me = Object.create(kiss || {} as any) as any
 export {
   kiss,
-  kiss_me,
+  client,
 }

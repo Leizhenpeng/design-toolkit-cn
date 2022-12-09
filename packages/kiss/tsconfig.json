@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "esnext",
+        "target": "es6",
         "outDir": "dist",
         "useDefineForClassFields": true,
         "allowSyntheticDefaultImports": true,
