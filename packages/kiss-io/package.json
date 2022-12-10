@@ -1,0 +1,45 @@
+{
+  "name": "kiss-io",
+  "version": "0.0.1",
+  "description": "😎 Awesome typescript library template",
+  "license": "MIT",
+  "repository": "git@github.com:yingpengsha/ts-lib-template.git",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup --watch --sourcemap",
+    "build": "tsup",
+    "test:dev": "vitest --passWithNoTests",
+    "test": "vitest run --passWithNoTests",
+    "lint": "eslint  --ignore-path .gitignore \"**/*.{js,ts,md,json,yml}\"",
+    "lint:fix": "pnpm run lint --fix",
+    "release": "bump --commit --push --tag && pnpm publish",
+    "reset": "rimraf ./node_modules && pnpm install"
+  },
+  "dependencies": {
+    "eventemitter3": "^5.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.33.0",
+    "@jsdevtools/version-bump-prompt": "^6.1.0",
+    "@types/node": "^16.10.2",
+    "eslint": "^8.28.0",
+    "lint-staged": "^11.1.2",
+    "rimraf": "^3.0.2",
+    "tsup": "^5.2.1",
+    "typescript": "^4.4.3",
+    "vitest": "^0.1.13"
+  },
+  "lint-staged": {
+    "*.{js,ts,md,json,yml}": [
+      "eslint --fix"
+    ]
+  }
+}

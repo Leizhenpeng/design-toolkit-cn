@@ -26,7 +26,7 @@ export class Detect_platform {
       if (window)
         result = true
     }
-    catch {
+    catch (e) {
       result = false
     }
     return result
@@ -38,7 +38,7 @@ export class Detect_platform {
       if (jsDesign)
         result = true
     }
-    catch {
+    catch (e) {
       result = false
     }
     return result
@@ -50,7 +50,7 @@ export class Detect_platform {
       if (figma)
         result = true
     }
-    catch {
+    catch (e) {
       result = false
     }
     return result
@@ -62,7 +62,7 @@ export class Detect_platform {
       if (mg)
         result = true
     }
-    catch {
+    catch (e) {
       result = false
     }
     return result

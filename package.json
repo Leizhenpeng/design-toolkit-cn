@@ -25,7 +25,9 @@
   ],
   "author": "RiverRay",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "kiss":"workspace:*"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.33.0",
     "@mastergo/plugin-typings": "^1.3.1",
