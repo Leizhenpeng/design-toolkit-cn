@@ -48,6 +48,14 @@ export class Kiss {
     return this.platform === 'mg'
   }
 
+  get inFigma() {
+    return this.platform === 'figma'
+  }
+
+  get inJsDesign() {
+    return this.platform === 'jsDesign'
+  }
+
   get inMgUi() {
     return this.ui_client === UiClientEnum.mg
   }
