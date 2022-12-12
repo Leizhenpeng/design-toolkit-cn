@@ -39,7 +39,6 @@ importers:
     specifiers:
       '@figma/plugin-typings': ^1.57.1
       '@jsdesigndeveloper/plugin-typings': ^1.0.9
-      '@jsdevtools/version-bump-prompt': ^6.1.0
       '@mastergo/plugin-typings': ^1.3.1
       '@types/node': '*'
       '@types/rimraf': ^3.0.2
@@ -53,7 +52,6 @@ importers:
     devDependencies:
       '@figma/plugin-typings': 1.57.1
       '@jsdesigndeveloper/plugin-typings': 1.0.9
-      '@jsdevtools/version-bump-prompt': 6.1.0
       '@mastergo/plugin-typings': 1.10.0
       '@types/node': 18.11.10
       '@types/rimraf': 3.0.2
