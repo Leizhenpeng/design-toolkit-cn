@@ -20,6 +20,8 @@
         "dev": "tsup-node --watch src",
         "build": "tsup-node --dts",
         "test": "vitest",
+        "lint": "eslint \"**/*.{js,ts}\"",
+        "lint:fix": "eslint \"**/*.{js,ts}\" --fix",
         "test:coverage": "vitest --coverage",
         "patch:type": "esno script/patchType.ts",
         "clear:patch": "rimraf src/types/client/*.d.ts",
@@ -43,7 +45,8 @@
         "kolorist": "^1.6.0",
         "rimraf": "^3.0.2",
         "ts-node": "^10.9.1",
-        "tsup": "^6.5.0"
+        "tsup": "^6.5.0",
+        "@jsdevtools/version-bump-prompt": "^6.1.0"
     },
     "publishConfig": {
         "access": "public",

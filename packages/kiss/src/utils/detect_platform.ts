@@ -1,13 +1,6 @@
 import { UiClientEnum } from '~/types'
 
-/**
-import { UiClientEnum } from '~/types';
- * @name: detect_platform.ts
- * @author: river
- * @date: 2022/12/3 7:17 PM
- * @contact: laolei@forkway.cn
- * @description：检测当前平台
- */
+// console.log('232131', 232131)
 export class Detect_platform {
   platform = 'unknown'
   constructor() {
