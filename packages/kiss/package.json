@@ -22,7 +22,8 @@
         "test": "vitest",
         "test:coverage": "vitest --coverage",
         "patch:type": "esno script/patchType.ts",
-        "clear:patch": "rimraf src/types/client/*.d.ts"
+        "clear:patch": "rimraf src/types/client/*.d.ts",
+        "preinstall": "npx only-allow pnpm"
     },
     "keywords": [
         "figma",
@@ -43,5 +44,12 @@
         "rimraf": "^3.0.2",
         "ts-node": "^10.9.1",
         "tsup": "^6.5.0"
-    }
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "files": [
+        "dist"
+    ]
 }
