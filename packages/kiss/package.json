@@ -1,6 +1,6 @@
 {
     "name": "kiss",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "同时兼容mastergo、jsDesign和figma的插件开发框架",
     "main": "index.js",
     "author": "RiverRay",
@@ -25,6 +25,7 @@
         "test:coverage": "vitest --coverage",
         "patch:type": "esno script/patchType.ts",
         "clear:patch": "rimraf src/types/client/*.d.ts",
+        "release": "bump --commit --push --tag && pnpm publish",
         "preinstall": "npx only-allow pnpm"
     },
     "keywords": [
