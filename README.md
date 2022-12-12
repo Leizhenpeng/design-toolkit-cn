@@ -7,7 +7,6 @@
 - [kiss](packages/kiss) - 同时支持masterGo、jsDesign以及Figma的适配器
 - [kiss-io](packages/kiss-io) - 协助Ui与Client实现异步通讯IO，Power By Kiss ~
 - [vite-plugin-kiss-config]() - 自动生成多平台配置文件的vite打包插件
-i
 
 ## Packages
 
@@ -18,7 +17,7 @@ i
 
 ## Awesome Kiss
 
-- [rectangle-creator]() - 🥱 没有比它更简单的上手项目了
+- [rectangle-creator]() - 🥱 应该没有比它更简单的上手项目了吧 
 
 
 ## License
