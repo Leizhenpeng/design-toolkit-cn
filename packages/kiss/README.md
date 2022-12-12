@@ -1,11 +1,14 @@
 # Kiss
 
-> 开箱即用的在线设计软件插件开发框架
+> 同时支持masterGo、jsDesign以及Figma的适配器
 
 ## Feature
 
-- 🎈优先贴合国人开发体验
-- 🎁 同时支持mastergo、js-design和Figma
+- 🎁 一套源码，同时支持masterGo、jsDesign和Figma
+- ☄️ 类型友好，支持ts自动补全
+- ⭐️ 主动监测代码运行时环境，自由切换所处上下文
+- 🍺 根据常用场景二次封装基础命令
+
 
 
 
