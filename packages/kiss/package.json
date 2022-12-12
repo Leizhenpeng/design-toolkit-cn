@@ -3,10 +3,9 @@
     "version": "1.0.0",
     "description": "同时兼容mastergo、jsdesign和figma的插件开发框架",
     "main": "index.js",
-    "type": "module",
     "author": "RiverRay",
     "license": "MIT",
-    "module": "dist/index.js",
+    "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
     "repository": {
         "type": "git",
@@ -21,7 +20,9 @@
         "dev": "tsup-node --watch src",
         "build": "tsup-node --dts",
         "test": "vitest",
-        "test:coverage": "vitest --coverage"
+        "test:coverage": "vitest --coverage",
+        "patch:type": "esno script/patchType.ts",
+        "clear:patch": "rimraf src/types/client/*.d.ts"
     },
     "keywords": [
         "figma",
@@ -29,12 +30,18 @@
         "jsdesign",
         "tooltik"
     ],
-    "dependencies": {
-        "@figma/plugin-typings": "^1.56.0",
-        "@jsdesigndeveloper/plugin-typings": "^1.0.9",
-        "@mastergo/plugin-typings": "^1.3.1"
-    },
     "devDependencies": {
+        "@figma/plugin-typings": "^1.57.1",
+        "@jsdesigndeveloper/plugin-typings": "^1.0.9",
+        "@mastergo/plugin-typings": "^1.3.1",
+        "@types/node": "*",
+        "@types/rimraf": "^3.0.2",
+        "esno": "0.10.0",
+        "figmaio": "^0.2.10",
+        "fs-extra": "^10.0.0",
+        "kolorist": "^1.6.0",
+        "rimraf": "^3.0.2",
+        "ts-node": "^10.9.1",
         "tsup": "^6.5.0"
     }
 }
