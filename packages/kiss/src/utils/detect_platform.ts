@@ -71,11 +71,13 @@ export class Detect_platform {
   get host() {
     if (!this.parse_platform().match(/ui/))
       return ''
-    return location.ancestorOrigins[0]
+    return location.ancestorOrigins[0] ?? ''
   }
 
   get ui_client() {
-    if (this.host.match(/mastergo\.com/))
+    if (!this.if_ui())
+      return UiClientEnum.unknown
+    else if (this.host.match(/mastergo\.com/))
       return UiClientEnum.mg
     else if (this.host.match(/figma\.com/))
       return UiClientEnum.figma
