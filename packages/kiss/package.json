@@ -25,7 +25,6 @@
         "test:coverage": "vitest --coverage",
         "patch:type": "esno script/patchType.ts",
         "clear:patch": "rimraf src/types/client/*.d.ts",
-        "release": "bump --commit --push --tag && pnpm publish",
         "preinstall": "npx only-allow pnpm"
     },
     "keywords": [

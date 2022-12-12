@@ -17,12 +17,13 @@
     "scripts": {
         "build": "pnpm --filter kiss-core --filter kiss-io run build ",
         "changeset": "changeset",
+        "bump": "changeset version",
+        "release": "pnpm build && pnpm release:only",
+        "release:only": "changeset publish --registry=https://registry.npmjs.com/",
         "test": "pnpm -r --workspace-concurrency=1 test",
         "lint": "eslint --ignore-path .gitignore '**/*.{js,ts,html,md}'",
         "lint:fix": "pnpm run lint --fix",
-        "prepare": "husky install",
-        "bump": "changeset version && pnpm update-manifests",
-        "release:only": "changeset publish --registry=https://registry.npmjs.com/"
+        "prepare": "husky install"
     },
     "keywords": [
         "figma",
