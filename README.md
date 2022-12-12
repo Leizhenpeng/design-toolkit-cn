@@ -1,16 +1,29 @@
 
 # Design Toolkit For Cn
-> 贴合国人使用习惯的设计插件开发工具集
+> 一套专注兼容与效率的设计插件开发环境
 
+## kiss 和他的朋友们
 
-
-### Figma With His Friends
-
-
-- [kiss]() - 同时兼容mastergo、jsdesign和figma的插件开发框架
-- [kiss-msg]() - 同时兼容mastergo、jsdesign和figma的emitter
+- [kiss](packages/kiss) - 同时支持masterGo、jsDesign以及Figma的适配器
+- [kiss-io](packages/kiss-io) - 协助Ui与Client实现异步通讯IO，Power By Kiss ~
 - [vite-plugin-kiss-config]() - 自动生成多平台配置文件的vite打包插件
-- 
+
+
+## Packages
+
+| Package                                         | Version (click for changelogs)                                                                           |
+| ----------------------------------------------- |:---------------------------------------------------------------------------------------------------------|
+| [kiss](packages/kiss)                           | [![kiss-core version](https://img.shields.io/npm/v/kiss-core.svg?label=%20)](packages/kiss/CHANGELOG.md) |
+| [kiss-io](packages/kiss-io) | [![kiss-io version](https://img.shields.io/npm/v/kiss-io.svg?label=%20)](packages/kiss-io/CHANGELOG.md)  |
+
+## Awesome Kiss
+
+- [rectangle-creator]() - 🥱 没有比它更简单的上手项目了
+
+
+## License
+
+[MIT](LICENSE).
 
 
 
