@@ -1,6 +1,6 @@
 {
     "name": "kiss",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "同时兼容mastergo、jsDesign和figma的插件开发框架",
     "main": "index.js",
     "author": "RiverRay",
