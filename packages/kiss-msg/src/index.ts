@@ -1,5 +1,5 @@
 import { EventEmitter } from 'eventemitter3'
-import { client, kiss } from 'kiss'
+import { client, kiss } from 'kiss-core'
 
 // const mg = client
 export class MyEvent extends EventEmitter {

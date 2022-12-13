@@ -1,7 +1,7 @@
 {
   "name": "kiss-msg",
   "version": "0.1.0",
-  "description": "🥮 设计插件的code与ui像`event-emitter`一样优雅地通信 ~",
+  "description": "🍭 让设计插件的code与ui像`event-emitter`一样优雅地通信 ~",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -28,18 +28,19 @@
     "reset": "rimraf ./node_modules && pnpm install"
   },
   "dependencies": {
-    "eventemitter3": "^5.0.0"
+    "eventemitter3": "^5.0.0",
+    "kiss-core": "workspace:*"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.33.0",
+    "@antfu/eslint-config": "^0.33.1",
     "@jsdevtools/version-bump-prompt": "^6.1.0",
-    "@types/node": "^16.10.2",
-    "eslint": "^8.28.0",
-    "lint-staged": "^11.1.2",
+    "@types/node": "^16.18.8",
+    "eslint": "^8.29.0",
+    "lint-staged": "^11.2.6",
     "rimraf": "^3.0.2",
-    "tsup": "^5.2.1",
-    "typescript": "^4.4.3",
-    "vitest": "^0.1.13"
+    "tsup": "^5.12.9",
+    "typescript": "^4.9.4",
+    "vitest": "^0.1.27"
   },
   "lint-staged": {
     "*.{js,ts,md,json,yml}": [
