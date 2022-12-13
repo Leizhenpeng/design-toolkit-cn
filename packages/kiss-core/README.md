@@ -1,6 +1,16 @@
-# Kiss
+<br>
 
-> 同时支持masterGo、jsDesign以及Figma的适配器
+<p align="center">
+<img src="./public/icon.svg" style="width:200px;" />
+</p>
+
+<h1 align="center">Kiss</h1>
+<p align="center">
+  同时支持masterGo、jsDesign以及Figma插件开发适配器
+</p>
+
+<p align="center">
+<a href="https://www.npmjs.com/package/kiss-core"><img src="https://img.shields.io/npm/v/kiss-core?color=CF0A0A&amp;label=" alt="NPM version"></a></p>
 
 ## Feature
 
