@@ -12,8 +12,8 @@
 
 | Package                                         | Version (click for changelogs)                                                                           |
 | ----------------------------------------------- |:---------------------------------------------------------------------------------------------------------|
-| [kiss-core](packages/kiss)                           | [![kiss-core version](https://img.shields.io/npm/v/kiss-core?color=CF0A0A&amp;label=)](packages/kiss/CHANGELOG.md) |
-| [kiss-msg](packages/kiss-msg) | [![kiss-io version](https://img.shields.io/npm/v/kiss-msg?color=CF0A0A&amp;label=)](packages/kiss-io/CHANGELOG.md)  |
+| [kiss-core](packages/kiss-core)                           | [![kiss-core version](https://img.shields.io/npm/v/kiss-core?color=CF0A0A&amp;label=)](packages/kiss-core/CHANGELOG.md) |
+| [kiss-msg](packages/kiss-msg) | [![kiss-io version](https://img.shields.io/npm/v/kiss-msg?color=CF0A0A&amp;label=)](packages/kiss-msg/CHANGELOG.md)  |
 
 ## Awesome Kiss
 
