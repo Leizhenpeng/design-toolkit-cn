@@ -1,12 +1,16 @@
 {
   "name": "kiss-msg",
   "version": "0.1.0",
-  "description": "🍭 让设计插件的code与ui像`event-emitter`一样优雅地通信 ~",
+  "description": "🍭 帮助设计插件中的code与ui像`event-emitter`一样优雅通信 ~",
   "license": "MIT",
+  "homepage": "https://github.com/Leizhenpeng/design-tooltik-cn/tree/main/packages/kiss-msg#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Leizhenpeng/design-tooltik-cn.git",
-    "directory": "packages/kiss-io"
+    "directory": "packages/kiss-msg"
+  },
+  "bugs": {
+    "url": "https://github.com/Leizhenpeng/design-tooltik-cn/issues"
   },
   "publishConfig": {
     "access": "public"

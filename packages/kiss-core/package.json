@@ -1,7 +1,7 @@
 {
     "name": "kiss-core",
     "version": "0.1.0",
-    "description": "同时兼容mastergo、jsDesign和figma的插件开发框架",
+    "description": "🍶同时支持masterGo、jsDesign以及Figma插件开发适配器",
     "main": "index.js",
     "author": "RiverRay",
     "license": "MIT",
@@ -10,12 +10,12 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Leizhenpeng/design-tooltik-cn.git",
-        "directory": "packages/kiss"
+        "directory": "packages/kiss-core"
     },
     "bugs": {
         "url": "https://github.com/Leizhenpeng/design-tooltik-cn/issues"
     },
-    "homepage": "https://github.com/Leizhenpeng/design-tooltik-cn/tree/main/packages/kiss#readme",
+    "homepage": "https://github.com/Leizhenpeng/design-tooltik-cn/tree/main/packages/kiss-core#readme",
     "scripts": {
         "dev": "tsup-node --watch src",
         "build": "tsup-node --dts",
