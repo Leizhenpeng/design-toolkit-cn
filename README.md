@@ -10,10 +10,10 @@
 
 ## Packages
 
-| Package                                         | Version (click for changelogs)                                                                           |
+| Package                                         | Version                                               |
 | ----------------------------------------------- |:---------------------------------------------------------------------------------------------------------|
-| [kiss-core](packages/kiss-core)                           | [![kiss-core version](https://img.shields.io/npm/v/kiss-core?color=CF0A0A&amp;label=)](packages/kiss-core/CHANGELOG.md) |
-| [kiss-msg](packages/kiss-msg) | [![kiss-io version](https://img.shields.io/npm/v/kiss-msg?color=CF0A0A&amp;label=)](packages/kiss-msg/CHANGELOG.md)  |
+| [kiss](packages/kiss-core)                           | <a href="https://www.npmjs.com/package/kiss-core"><img src="https://img.shields.io/npm/v/kiss-core?color=CF0A0A&amp;label=" alt="NPM version"></a>|
+| [kiss-msg](packages/kiss-msg) |<a href="https://www.npmjs.com/package/kiss-msg"><img src="https://img.shields.io/npm/v/kiss-msg?color=CF0A0A&amp;label=" alt="NPM version"></a> |
 
 ## Awesome Kiss
 
