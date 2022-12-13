@@ -1,5 +1,13 @@
 # kiss-msg
 
+## 0.1.2
+
+### Patch Changes
+
+-   change readme
+-   Updated dependencies
+    -   kiss-core@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
