@@ -7,6 +7,7 @@
 - [kiss](packages/kiss-core) 🍶同时支持masterGo、jsDesign以及Figma插件开发适配器
 - [kiss-msg](packages/kiss-msg) 🍭 帮助设计插件中的CODE与UI实现更优雅通信 Power By Kiss ~
 - [kiss-pay]() 🎁 便捷开发者维护自己的商业订阅生态
+- [kiss-eye]() 🎯 插件运营数据埋点工具
 - [vite-plugin-kiss-config]() - 🍙 一款自动生成多平台配置文件的vite打包插件
 
 ## Packages
