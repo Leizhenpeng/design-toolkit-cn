@@ -1,9 +1,13 @@
 {
   "name": "kiss-msg",
-  "version": "2.0.0",
-  "description": "😎 Awesome typescript library template",
+  "version": "0.1.0",
+  "description": "🥮 设计插件的code与ui像`event-emitter`一样优雅地通信 ~",
   "license": "MIT",
-  "repository": "git@github.com:yingpengsha/ts-lib-template.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leizhenpeng/design-tooltik-cn.git",
+    "directory": "packages/kiss-io"
+  },
   "publishConfig": {
     "access": "public"
   },
