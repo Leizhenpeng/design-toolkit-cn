@@ -1,9 +1,0 @@
-{
-  "mode": "pre",
-  "tag": "beta",
-  "initialVersions": {
-    "kiss-core": "0.1.0",
-    "kiss-msg": "0.1.0"
-  },
-  "changesets": []
-}
