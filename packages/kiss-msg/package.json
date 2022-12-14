@@ -12,6 +12,14 @@
   "bugs": {
     "url": "https://github.com/Leizhenpeng/design-tooltik-cn/issues"
   },
+  "keywords": [
+    "figma",
+    "mastergo",
+    "jsdesign",
+    "kiss",
+    "plugin",
+    "io"
+  ],
   "publishConfig": {
     "access": "public"
   },

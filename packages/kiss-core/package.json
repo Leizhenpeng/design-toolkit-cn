@@ -32,7 +32,9 @@
         "figma",
         "mastergo",
         "jsdesign",
-        "tooltik"
+        "toolkit",
+        "kiss",
+        "plugin"
     ],
     "devDependencies": {
         "@figma/plugin-typings": "^1.57.1",
