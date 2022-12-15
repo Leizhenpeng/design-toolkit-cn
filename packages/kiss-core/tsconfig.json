@@ -21,9 +21,6 @@
         "types": [
             "vite/client",
             "vitest/importMeta",
-            "@mastergo/plugin-typings/dist/index",
-            "@figma/plugin-typings",
-            "@jsdesigndeveloper/plugin-typings"
         ],
         "baseUrl": ".",
         "paths": {

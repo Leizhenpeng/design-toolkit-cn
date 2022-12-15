@@ -1,11 +1,14 @@
-import type { Platform } from '~/types'
-import { UiClientEnum } from '~/types'
+import type { masterGoClinet } from '../types/client/masterGo'
+import type { figmaClient } from '../types/client/figma'
+import type { jsDesignClient } from '../types/client/jsDesign'
+import type { Platform } from '../types'
+import { UiClientEnum } from '../types'
 import { Detect_platform } from '~/utils/detect_platform'
 
 export class Kiss {
   platform: Platform = 'unknown'
   ui_client: UiClientEnum = UiClientEnum.unknown
-  private _client: PluginAPI | any
+  private _client: masterGoClinet.PluginAPI | figmaClient.PluginAPI | jsDesignClient.PluginAPI | any
   constructor() {
     this.parsePlatForm()
     this.initClient()
@@ -70,3 +73,4 @@ export class Kiss {
     this._client.showUI(args as any)
   }
 }
+

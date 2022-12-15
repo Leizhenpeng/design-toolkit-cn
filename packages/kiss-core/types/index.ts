@@ -1,18 +1,6 @@
 import type { masterGoClinet } from './client/masterGo'
 import type { figmaClient } from './client/figma'
 import type { jsDesignClient } from './client/jsDesign'
-// declare namespace Models {
-//   export import Mg = masterGo
-//   export import Figma = figma
-// }import { expect } from 'vitest';
-
-// export { Models }
-
-// declare global {
-//   const mg: any
-//   // const figma: any
-//   // const jsDesign: any
-// }
 
 export type Platform = 'figma' | 'mg' | 'jsDesign' | 'unknown' | 'ui'
 export enum PlatformEnum {
@@ -37,3 +25,18 @@ export interface IClientCopy {
 export interface IClient extends IClientCopy {
   [key: string]: any
 }
+
+declare global {
+  const figma: figmaClient.PluginAPI
+  const jsDesign: jsDesignClient.PluginAPI
+  const mg: masterGoClinet.PluginAPI
+  const __html__: string
+  const __uiFiles__: {
+    [key: string]: string
+  }
+}
+
+export * from '../types/client/masterGo.d'
+export * from '../types/client/figma.d'
+export * from '../types/client/jsDesign.d'
+
