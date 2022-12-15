@@ -1,6 +1,6 @@
 {
   "name": "kiss-msg",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "🍭 帮助设计插件中的code与ui像`event-emitter`一样优雅通信 ~",
   "license": "MIT",
   "homepage": "https://github.com/Leizhenpeng/design-tooltik-cn/tree/main/packages/kiss-msg#readme",
