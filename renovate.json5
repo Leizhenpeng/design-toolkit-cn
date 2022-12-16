@@ -24,7 +24,6 @@
         {
             groupName: 'Design Type',
             matchPackageNames: ['@figma/plugin-typings', '@jsdesigndeveloper/plugin-typings', '@mastergo/plugin-typings'],
-            matchUpdateTypes: ['major', 'minor', 'patch'],
             rangeStrategy: 'bump',
             enabled: true
         }
