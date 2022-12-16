@@ -10,10 +10,10 @@
   "labels": ["renovate"],
   "masterIssue": true,
   "timezone": "Asia/Shanghai",
-  "ignoreDeps": ["pnpm","fs-extrae", "@​types/node"],
+  "ignoreDeps": ["pnpm","fs-extra", "@​types/node"],
   "packageRules": [
     {
-      "matchPackageNames": [ "pnpm","fs-extrae", "@​types/node"],
+      "matchPackageNames": [ "pnpm","fs-extra", "@​types/node"],
       "enabled": false
     },
     {
