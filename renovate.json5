@@ -9,14 +9,24 @@
   "ignorePresets":[':prHourlyLimit2',],
   "labels": ["renovate"],
   "masterIssue": true,
+  "timezone": "Asia/Shanghai",
+  "ignoreDeps": ["pnpm","fs-extrae", "@​types/node"],
   "packageRules": [
     {
-      "matchPackageNames": [ "pnpm","fs-extrae","@​types/node"],
+      "matchPackageNames": [ "pnpm","fs-extrae", "@​types/node"],
       "enabled": false
     },
     {
       "matchPackageNames": ["vite"],
       "allowedVersions": "<4"
+    },
+    {
+      "groupName": "Design Type",
+      "matchPackageNames": ["@figma/plugin-typings","@jsdesigndeveloper/plugin-typings","@mastergo/plugin-typings"],
+      "matchUpdateTypes": ["major","minor","patch"],
+      "schedule": ["before 2am"],
+      "enabled": true
+
     }
   ]
 }
