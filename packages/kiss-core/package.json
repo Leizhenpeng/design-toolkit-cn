@@ -2,17 +2,21 @@
     "name": "kiss-core",
     "version": "0.2.1",
     "description": "🍶一套兼容masterGo、jsDesign以及Figma的插件开发环境",
-    "main": "index.js",
+    "main": "dist/index.js",
     "author": "RiverRay",
     "license": "MIT",
-    "module": "dist/src/index.mjs",
-    "types": "dist/src/index.d.ts",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "types"
+    ],
     "exports": {
         ".": {
-            "import": "./dist/src/index.mjs",
-            "require": "./dist/src/index.js"
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
         },
-        "./types/*": "./dist/types/*",
+        "./types/*": "./types/*",
         "./package.json": "./package.json"
     },
     "repository": {
@@ -63,8 +67,5 @@
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.org/"
-    },
-    "files": [
-        "dist"
-    ]
+    }
 }
