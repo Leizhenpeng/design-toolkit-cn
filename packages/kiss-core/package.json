@@ -52,7 +52,7 @@
         "@types/rimraf": "^3.0.2",
         "esno": "0.10.0",
         "figmaio": "^0.2.10",
-        "fs-extra": "^10.1.0",
+        "fs-extra": "^11.0.0",
         "kolorist": "^1.6.0",
         "rimraf": "^3.0.2",
         "ts-node": "^10.9.1",
