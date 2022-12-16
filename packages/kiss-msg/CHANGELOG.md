@@ -1,5 +1,12 @@
 # kiss-msg
 
+## 0.2.2
+
+### Patch Changes
+
+-   Updated dependencies [[`abd71e5`](https://github.com/Leizhenpeng/design-toolkit-cn/commit/abd71e5d39a2685d67f540ada5a86ebc25a6db4a)]:
+    -   kiss-core@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
