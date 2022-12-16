@@ -10,7 +10,7 @@ importers:
       '@mastergo/plugin-typings': ^1.10.0
       '@types/fs-extra': ^9.0.13
       '@types/lodash-es': ^4.17.6
-      '@types/node': ^16.18.8
+      '@types/node': ^18.0.0
       eslint: ^8.29.0
       husky: ^8.0.2
       lint-staged: ^13.1.0
@@ -26,14 +26,14 @@ importers:
       '@mastergo/plugin-typings': 1.10.0
       '@types/fs-extra': 9.0.13
       '@types/lodash-es': 4.17.6
-      '@types/node': 16.18.8
+      '@types/node': 18.11.13
       eslint: 8.29.0
       husky: 8.0.2
       lint-staged: 13.1.0
       terser: 5.16.1
       typescript: 4.9.4
-      vite: 3.2.5_k3xddkw34dlrtemy47bp74om2i
-      vite-node: 0.25.8_k3xddkw34dlrtemy47bp74om2i
+      vite: 3.2.5_2jljxqqm3icfr33rwkwj4ubglu
+      vite-node: 0.25.8_2jljxqqm3icfr33rwkwj4ubglu
       vitest: 0.25.8_terser@5.16.1
 
   packages/kiss-core:
@@ -70,7 +70,7 @@ importers:
     specifiers:
       '@antfu/eslint-config': ^0.34.0
       '@jsdevtools/version-bump-prompt': ^6.1.0
-      '@types/node': ^16.18.8
+      '@types/node': ^18.0.0
       eslint: ^8.29.0
       eventemitter3: ^5.0.0
       kiss-core: workspace:*
@@ -85,7 +85,7 @@ importers:
     devDependencies:
       '@antfu/eslint-config': 0.34.0_ha6vam6werchizxrnqvarmz2zu
       '@jsdevtools/version-bump-prompt': 6.1.0
-      '@types/node': 16.18.8
+      '@types/node': 18.11.13
       eslint: 8.29.0
       lint-staged: 13.1.0
       rimraf: 3.0.2
@@ -856,7 +856,7 @@ packages:
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
-      '@types/node': 16.18.8
+      '@types/node': 18.11.13
     dev: true
 
   /@types/glob/8.0.0:
@@ -906,10 +906,6 @@ packages:
 
   /@types/node/12.20.55:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
-    dev: true
-
-  /@types/node/16.18.8:
-    resolution: {integrity: sha512-TrpoNiaPvBH5h8rQQenMtVsJXtGsVBRJrcp2Ik6oEt99jHfGvDLh20VTTq3ixTbjYujukYz1IlY4N8a8yfY0jA==}
     dev: true
 
   /@types/node/18.11.13:
@@ -4620,7 +4616,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-node/0.25.8_k3xddkw34dlrtemy47bp74om2i:
+  /vite-node/0.25.8_2jljxqqm3icfr33rwkwj4ubglu:
     resolution: {integrity: sha512-o1GsPZcq4ce7ZUUALnOfYP/bjaHQYtLDLuirOMvYCdsuvDMb2tggib2RZRfHIhTEF2QnIgyQEoyaOjAMHGPRiw==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -4630,7 +4626,7 @@ packages:
       pathe: 0.2.0
       source-map: 0.6.1
       source-map-support: 0.5.21
-      vite: 4.0.1_k3xddkw34dlrtemy47bp74om2i
+      vite: 4.0.1_2jljxqqm3icfr33rwkwj4ubglu
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -4641,7 +4637,7 @@ packages:
       - terser
     dev: true
 
-  /vite/3.2.5_k3xddkw34dlrtemy47bp74om2i:
+  /vite/3.2.5_2jljxqqm3icfr33rwkwj4ubglu:
     resolution: {integrity: sha512-4mVEpXpSOgrssFZAOmGIr85wPHKvaDAcXqxVxVRZhljkJOMZi1ibLibzjLHzJvcok8BMguLc7g1W6W/GqZbLdQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4666,7 +4662,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 16.18.8
+      '@types/node': 18.11.13
       esbuild: 0.15.18
       postcss: 8.4.20
       resolve: 1.22.1
@@ -4741,41 +4737,6 @@ packages:
       postcss: 8.4.20
       resolve: 1.22.1
       rollup: 3.7.3
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
-  /vite/4.0.1_k3xddkw34dlrtemy47bp74om2i:
-    resolution: {integrity: sha512-kZQPzbDau35iWOhy3CpkrRC7It+HIHtulAzBhMqzGHKRf/4+vmh8rPDDdv98SWQrFWo6//3ozwsRmwQIPZsK9g==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      '@types/node': 16.18.8
-      esbuild: 0.16.4
-      postcss: 8.4.20
-      resolve: 1.22.1
-      rollup: 3.7.3
-      terser: 5.16.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
