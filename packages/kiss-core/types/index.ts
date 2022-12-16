@@ -39,4 +39,3 @@ declare global {
 export * from '../types/client/masterGo.d'
 export * from '../types/client/figma.d'
 export * from '../types/client/jsDesign.d'
-
