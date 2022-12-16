@@ -1,6 +1,6 @@
 {
     "name": "kiss-core",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "🍶一套兼容masterGo、jsDesign以及Figma的插件开发环境",
     "main": "index.js",
     "author": "RiverRay",
@@ -26,13 +26,14 @@
     "homepage": "https://github.com/Leizhenpeng/design-tooltik-cn/tree/main/packages/kiss-core#readme",
     "scripts": {
         "dev": "tsup-node --watch src",
-        "build": "tsup-node --dts",
+        "build": "npm run refresh:type && tsup-node --dts",
         "test": "vitest",
         "lint": "eslint \"**/*.{js,ts}\"",
         "lint:fix": "eslint \"**/*.{js,ts}\" --fix",
         "test:coverage": "vitest --coverage",
         "patch:type": "esno script/patchType.ts",
-        "clear:patch": "rimraf types/client/*.d.ts",
+        "clear:type": "rimraf types/client/*.d.ts",
+        "refresh:type": "npm run clear:type && npm run patch:type",
         "release": "bump --commit --push --tag && pnpm publish",
         "preinstall": "npx only-allow pnpm"
     },
@@ -47,7 +48,7 @@
     "devDependencies": {
         "@figma/plugin-typings": "^1.57.1",
         "@jsdesigndeveloper/plugin-typings": "^1.0.9",
-        "@mastergo/plugin-typings": "^1.10.0",
+        "@mastergo/plugin-typings": "^1.11.0",
         "@types/node": "^18.11.13",
         "@types/rimraf": "^3.0.2",
         "esno": "0.16.3",

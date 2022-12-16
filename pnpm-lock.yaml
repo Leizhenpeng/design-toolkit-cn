@@ -7,7 +7,7 @@ importers:
       '@antfu/eslint-config': ^0.34.0
       '@changesets/changelog-github': ^0.4.7
       '@changesets/cli': ^2.25.2
-      '@mastergo/plugin-typings': ^1.10.0
+      '@mastergo/plugin-typings': ^1.11.0
       '@types/fs-extra': ^9.0.13
       '@types/lodash-es': ^4.17.6
       '@types/node': ^18.0.0
@@ -23,7 +23,7 @@ importers:
       '@antfu/eslint-config': 0.34.0_ha6vam6werchizxrnqvarmz2zu
       '@changesets/changelog-github': 0.4.7
       '@changesets/cli': 2.25.2
-      '@mastergo/plugin-typings': 1.10.0
+      '@mastergo/plugin-typings': 1.11.0
       '@types/fs-extra': 9.0.13
       '@types/lodash-es': 4.17.6
       '@types/node': 18.11.13
@@ -40,7 +40,7 @@ importers:
     specifiers:
       '@figma/plugin-typings': ^1.57.1
       '@jsdesigndeveloper/plugin-typings': ^1.0.9
-      '@mastergo/plugin-typings': ^1.10.0
+      '@mastergo/plugin-typings': ^1.11.0
       '@types/node': ^18.11.13
       '@types/rimraf': ^3.0.2
       esno: 0.16.3
@@ -54,7 +54,7 @@ importers:
     devDependencies:
       '@figma/plugin-typings': 1.57.1
       '@jsdesigndeveloper/plugin-typings': 1.0.9
-      '@mastergo/plugin-typings': 1.10.0
+      '@mastergo/plugin-typings': 1.11.0
       '@types/node': 18.11.13
       '@types/rimraf': 3.0.2
       esno: 0.16.3
@@ -802,8 +802,8 @@ packages:
       read-yaml-file: 1.1.0
     dev: true
 
-  /@mastergo/plugin-typings/1.10.0:
-    resolution: {integrity: sha512-CqJpQNaVbzaaSQuY3Qp5CMiYlZeWZgmvFxpeIPrag4qSBWuhOiTbY0eljDB589+NoI/h6U+wTMTdhNpsPdGdzQ==}
+  /@mastergo/plugin-typings/1.11.0:
+    resolution: {integrity: sha512-wCnRtXfhoQoCHAx+yellftwxRU4ay4cWuO1fXGwBqcSTF+W62NF4F4pvaRHuL4IdsS3aDU+8kgzGkvZkzr9S7A==}
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:

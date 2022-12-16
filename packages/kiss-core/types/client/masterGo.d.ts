@@ -41,6 +41,8 @@ export declare namespace masterGoClinet {
 
     readonly command: string
 
+    readonly mixed: string | symbol
+
     readonly clientStorage: ClientStorageAPI
 
     readonly viewport: ViewportAPI
@@ -57,6 +59,7 @@ export declare namespace masterGoClinet {
     showUI(html: string, options?: ShowUIOptions): void
 
     getNodeById(id: string): SceneNode | null
+    getNodeByPosition(position: {x: number, y: number}): SceneNode | null
     createRectangle(): RectangleNode
     createLine(): LineNode
     createEllipse(): EllipseNode
@@ -108,13 +111,17 @@ export declare namespace masterGoClinet {
     createImage(imageData: Uint8Array): Promise<Image>
     getImageByHref(href: string): Image
 
-    /**
-     * 订阅团队库数据
-     */
-    teamLibrary: TeamLibrary,
+
+    getTeamLibraryAsync(): Promise<TeamLibrary>,
     importComponentByKeyAsync(ukey: string): Promise<ComponentNode>,
     importComponentSetByKeyAsync(ukey: string): Promise<ComponentSetNode>,
     importStyleByKeyAsync(ukey: string): Promise<Style>,
+    /**
+     * @deprecated
+     * 
+     * This attribute is deprecated, please use getTeamLibraryAsync instead.
+     */
+    teamLibrary: TeamLibrary,
 
     hexToRGBA(hex: string): RGBA
     RGBAToHex(rgba: RGBA): string
@@ -225,6 +232,7 @@ export declare namespace masterGoClinet {
       fontSize: number
       letterSpacing: LetterSpacing
       lineHeight: LineHeight
+      lineHeightByPx: number
       textDecoration: TextDecoration
       textCase: TextCase
       fontWeight: number
@@ -439,7 +447,7 @@ export declare namespace masterGoClinet {
 
   interface BaseNodeMixin {
     readonly id: string
-    readonly parent: (BaseNode & ChildrenMixin) | void
+    readonly parent: (BaseNode & ChildrenMixin) | null
     name: string
     removed: boolean
     remove(): void
@@ -568,7 +576,7 @@ export declare namespace masterGoClinet {
   interface CornerMixin {
     // 待确认
     cornerSmooth: number
-    cornerRadius: number | symbol
+    cornerRadius: number | PluginAPI['mixed']
   }
 
   interface DefaultShapeMixin
