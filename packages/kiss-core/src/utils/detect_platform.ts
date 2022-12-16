@@ -1,6 +1,5 @@
-import { UiClientEnum } from '~/types'
+import { UiClientEnum } from '../../types'
 
-// console.log('232131', 232131)
 export class Detect_platform {
   platform = 'unknown'
   constructor() {

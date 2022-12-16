@@ -11,7 +11,12 @@
 </p>
 
 <p align="center">
-<a href="https://www.npmjs.com/package/kiss-msg"><img src="https://img.shields.io/npm/v/kiss-msg?color=CF0A0A&amp;label=" alt="NPM version"></a></p>
+<a href="https://actions-badge.atrox.dev/Leizhenpeng/design-toolkit-cn/goto?ref=main"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FLeizhenpeng%2Fdesign-toolkit-cn%2Fbadge%3Fref%3Dmain&style=flat" alt="Build Status"></a>
+<a href="https://www.npmjs.com/package/kiss-msg"><img src="https://img.shields.io/npm/v/kiss-msg?color=CF0A0A&amp;label=NPM" alt="NPM version"></a>
+  <a href="https://npmjs.org/package/kiss-msg">
+    <img src="https://img.shields.io/npm/dm/kiss-msg.svg" alt="downloads" />
+  </a>
+</p>
 
 
 - 🎁 兼容masterGo、jsDesign和Figma
@@ -20,4 +25,5 @@
 
 
 ## License
-[MIT](./LICENSE)
+[MIT](./LICENSE) © [River](https://github.com/Leizhenpeng)
+

@@ -23,9 +23,6 @@
 
 
 ## License
-
-[MIT](LICENSE).
-
-
+[MIT](./LICENSE) © [River](https://github.com/Leizhenpeng)
 
 

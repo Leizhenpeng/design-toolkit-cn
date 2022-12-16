@@ -8,7 +8,7 @@ export declare namespace masterGoClinet {
   function clearTimeout(timeoutID: number): void
   function setInterval(callback: Function, timeout: number): number
   function clearInterval(timeoutID: number): void
-  function requestAnimationFrame(cb: (ts: number) => void): numberw
+  function requestAnimationFrame(cb: (ts: number) => void): number
   function cancelAnimationFrame(requestID: number): void
 
   interface Console {

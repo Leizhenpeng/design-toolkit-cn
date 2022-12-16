@@ -1,12 +1,20 @@
 {
     "name": "kiss-core",
-    "version": "0.1.2",
-    "description": "🍶同时支持masterGo、jsDesign以及Figma插件开发适配器",
+    "version": "0.2.0",
+    "description": "🍶一套兼容masterGo、jsDesign以及Figma的插件开发环境",
     "main": "index.js",
     "author": "RiverRay",
     "license": "MIT",
-    "module": "dist/index.mjs",
-    "types": "dist/index.d.ts",
+    "module": "dist/src/index.mjs",
+    "types": "dist/src/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/src/index.mjs",
+            "require": "./dist/src/index.js"
+        },
+        "./types/*": "./dist/types/*",
+        "./package.json": "./package.json"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Leizhenpeng/design-tooltik-cn.git",
@@ -24,7 +32,7 @@
         "lint:fix": "eslint \"**/*.{js,ts}\" --fix",
         "test:coverage": "vitest --coverage",
         "patch:type": "esno script/patchType.ts",
-        "clear:patch": "rimraf src/types/client/*.d.ts",
+        "clear:patch": "rimraf types/client/*.d.ts",
         "release": "bump --commit --push --tag && pnpm publish",
         "preinstall": "npx only-allow pnpm"
     },

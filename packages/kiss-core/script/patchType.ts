@@ -22,9 +22,9 @@ export const checkPluginTypes = async () => {
 }
 
 const checkClientTypesDir = async () => {
-  const path = r('src', 'types', 'client')
+  const path = r('types', 'client')
   await access(path).catch(() => {
-    log('kiss', 'src/types/client not found, creating...')
+    log('kiss', 'types/client not found, creating...')
     fs.mkdirSync(path)
   })
 }
@@ -36,7 +36,7 @@ const genTypeMasterGo = async () => {
     'declare global {',
     'export declare namespace masterGoClinet {')
   await fs.writeFile(
-    r('src', 'types/client', 'masterGo.d.ts'), newContent, 'utf-8')
+    r('types/client', 'masterGo.d.ts'), newContent, 'utf-8')
 }
 
 const genTypeFigma = async () => {
@@ -44,7 +44,7 @@ const genTypeFigma = async () => {
   const content = await fs.readFile(figmaPath, 'utf-8')
   const newContent = `export declare namespace figmaClient {\n${content}\n}`
   await fs.writeFile(
-    r('src', 'types', 'client', 'figma.d.ts'), newContent, 'utf-8')
+    r('types', 'client', 'figma.d.ts'), newContent, 'utf-8')
 }
 
 const genTypeJsDesign = async () => {
@@ -52,7 +52,7 @@ const genTypeJsDesign = async () => {
   const content = await fs.readFile(jsDesignPath, 'utf-8')
   const newContent = `export declare namespace jsDesignClient {\n${content}\n}`
   await fs.writeFile(
-    r('src', 'types', 'client', 'jsDesign.d.ts'), newContent, 'utf-8')
+    r('types', 'client', 'jsDesign.d.ts'), newContent, 'utf-8')
 }
 
 checkPluginTypes().then(() => {
