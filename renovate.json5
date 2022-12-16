@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "assignees":["Leizhenpeng"],
+  "baseBranches":["main"],
+  "commitBodyTable": true,
+  "ignorePresets":[':prHourlyLimit2',],
+  "labels": ["renovate"],
+  "masterIssue": true,
+  "packageRules": [
+    {
+      "matchPackageNames": [ "pnpm","fs-extrae","@​types/node"],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["vite"],
+      "allowedVersions": "<4"
+    }
+  ]
+}
