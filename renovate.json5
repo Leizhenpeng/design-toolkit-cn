@@ -13,7 +13,7 @@
     prCreation: 'not-pending',
     packageRules: [
         {
-            matchPackageNames: ['pnpm', 'fs-extra'],
+            matchPackageNames: ['pnpm', 'fs-extra','@types/node'],
             matchUpdateTypes: ['major'],
             enabled: false
         },
