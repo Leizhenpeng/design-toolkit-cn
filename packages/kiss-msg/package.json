@@ -46,7 +46,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.33.1",
     "@jsdevtools/version-bump-prompt": "^6.1.0",
-    "@types/node": "^16.18.8",
+    "@types/node": "^18.0.0",
     "eslint": "^8.29.0",
     "lint-staged": "^11.2.6",
     "rimraf": "^3.0.2",
