@@ -9,7 +9,8 @@
     masterIssue: true,
     timezone: 'Asia/Shanghai',
     ignoreDeps: ['pnpm', 'fs-extra'],
-    "ignorePresets": ["workarounds:typesNodeVersioning"],
+    ignorePresets: ["workarounds:typesNodeVersioning"],
+    prCreation: 'not-pending',
     packageRules: [
         {
             matchPackageNames: ['pnpm', 'fs-extra'],
@@ -24,7 +25,7 @@
             groupName: 'Design Type',
             matchPackageNames: ['@figma/plugin-typings', '@jsdesigndeveloper/plugin-typings', '@mastergo/plugin-typings'],
             matchUpdateTypes: ['major', 'minor', 'patch'],
-            schedule: ['before 2am'],
+            rangeStrategy: 'bump',
             enabled: true
         }
     ]
