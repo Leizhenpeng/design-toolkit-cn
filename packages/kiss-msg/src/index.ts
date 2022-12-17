@@ -1,15 +1,20 @@
 import { EventEmitter } from 'eventemitter3'
 import { client, kiss } from 'kiss-core'
 
-// const mg = client
+export interface MsgDto {
+  msg: string
+  data: any
+}
+
 export class MyEvent extends EventEmitter {
   ifUI: boolean
   ifMg: boolean
   ifMgUi: boolean
+
   constructor(
-        ifRenderUI = false,
-        ifMg = false,
-        ifMgUi = false,
+    ifRenderUI = false,
+    ifMg = false,
+    ifMgUi = false,
   ) {
     super()
     this.ifUI = ifRenderUI
@@ -33,7 +38,7 @@ export class MyEvent extends EventEmitter {
           window.onmessage = ev => receive(ev.data)
         }
         catch (e) {
-        //   console.log('err', e)
+          //   console.log('err', e)
         }
       }
       else {
@@ -62,7 +67,7 @@ export class MyEvent extends EventEmitter {
           window.parent.postMessage(postData, '*')
         }
         catch (e) {
-        //   console.log('err', e)
+          //   console.log('err', e)
         }
       }
       else {
@@ -74,14 +79,16 @@ export class MyEvent extends EventEmitter {
     }
   }
 
-  loadFirst(ev: any) {
-    return new Promise((resolve) => {
-      this.once(ev, resolve)
-    })
+  // type support
+  answer<T extends MsgDto>(event: T['msg'], handler: (data: T['data']) => void): this {
+    return super.on(event, handler)
+  }
+
+  query<T extends MsgDto>(event: T['msg'], data: T['data']) {
+    this.send(event, data)
   }
 }
 
 // console.log(kiss, kiss.inUi, kiss.inMgUi)
 export const io_ui = kiss.inUi ? new MyEvent(true, kiss.inMg, kiss.inMgUi) : undefined
 export const io_hook = kiss.inUi ? undefined : new MyEvent(false, kiss.inMg, kiss.inMgUi)
-

@@ -3,6 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "strict": true,
+    "strictPropertyInitialization": false,
     "esModuleInterop": true,
     "moduleResolution": "node",
     "noUnusedLocals": true,
