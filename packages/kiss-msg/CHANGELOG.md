@@ -1,5 +1,11 @@
 # kiss-msg
 
+## 0.2.3
+
+### Patch Changes
+
+-   [#17](https://github.com/Leizhenpeng/design-toolkit-cn/pull/17) [`43f2b5c`](https://github.com/Leizhenpeng/design-toolkit-cn/commit/43f2b5c9c6eaba128d079e9432cd296739a00210) Thanks [@Leizhenpeng](https://github.com/Leizhenpeng)! - new two type friendly method `query` `method`
+
 ## 0.2.2
 
 ### Patch Changes
