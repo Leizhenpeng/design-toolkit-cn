@@ -6,6 +6,8 @@ import spawn from 'cross-spawn'
 import minimist from 'minimist'
 import prompts from 'prompts'
 import { blue, cyan, green, lightGreen, lightRed, magenta, red, reset, yellow } from 'kolorist'
+import { copy, editFile, emptyDir, formatTargetDir, isEmpty } from './util/file'
+import { isValidPackageName, toValidPackageName } from './util/packageName'
 
 // Avoids autoconversion to number of the project name by defining that the args
 // non associated with an option ( _ ) needs to be parsed as a string. See #4606
@@ -188,7 +190,7 @@ async function init() {
   const argTemplate = argv.template || argv.t
 
   let targetDir = argTargetDir || defaultTargetDir
-  const getpluginName = () => (targetDir === '.' ? path.basename(path.resolve()) : targetDir)
+  const getPluginName = () => (targetDir === '.' ? path.basename(path.resolve()) : targetDir)
 
   let result: prompts.Answers<'pluginName' | 'overwrite' | 'packageName' | 'framework' | 'variant'>
 
@@ -220,10 +222,10 @@ async function init() {
           name: 'overwriteChecker',
         },
         {
-          type: () => (isValidPackageName(getpluginName()) ? null : 'text'),
+          type: () => (isValidPackageName(getPluginName()) ? null : 'text'),
           name: 'packageName',
           message: reset('Package name:'),
-          initial: () => toValidPackageName(getpluginName()),
+          initial: () => toValidPackageName(getPluginName()),
           validate: dir => isValidPackageName(dir) || 'Invalid package.json name',
         },
         {
@@ -334,7 +336,7 @@ async function init() {
 
   const pkg = JSON.parse(fs.readFileSync(path.join(templateDir, 'package.json'), 'utf-8'))
 
-  pkg.name = packageName || getpluginName()
+  pkg.name = packageName || getPluginName()
 
   write('package.json', JSON.stringify(pkg, null, 2))
 
@@ -358,56 +360,6 @@ async function init() {
   console.log()
 }
 
-function formatTargetDir(targetDir: string | undefined) {
-  return targetDir?.trim().replace(/\/+$/g, '')
-}
-
-function copy(src: string, dest: string) {
-  const stat = fs.statSync(src)
-  if (stat.isDirectory())
-    copyDir(src, dest)
-  else fs.copyFileSync(src, dest)
-}
-
-function isValidPackageName(pluginName: string) {
-  return /^(?:@[a-z\d\-*~][a-z\d\-*._~]*\/)?[a-z\d\-~][a-z\d\-._~]*$/.test(pluginName)
-}
-
-function toValidPackageName(pluginName: string) {
-  return pluginName
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/^[._]/, '')
-    .replace(/[^a-z\d\-~]+/g, '-')
-}
-
-function copyDir(srcDir: string, destDir: string) {
-  fs.mkdirSync(destDir, { recursive: true })
-  for (const file of fs.readdirSync(srcDir)) {
-    const srcFile = path.resolve(srcDir, file)
-    const destFile = path.resolve(destDir, file)
-    copy(srcFile, destFile)
-  }
-}
-
-function isEmpty(path: string) {
-  const files = fs.readdirSync(path)
-  return files.length === 0 || (files.length === 1 && files[0] === '.git')
-}
-
-function emptyDir(dir: string) {
-  if (!fs.existsSync(dir))
-    return
-
-  for (const file of fs.readdirSync(dir)) {
-    if (file === '.git')
-      continue
-
-    fs.rmSync(path.resolve(dir, file), { recursive: true, force: true })
-  }
-}
-
 function pkgFromUserAgent(userAgent: string | undefined) {
   if (!userAgent)
     return undefined
@@ -426,11 +378,6 @@ function setupReactSwc(root: string, isTs: boolean) {
   editFile(path.resolve(root, `vite.config.${isTs ? 'ts' : 'js'}`), (content) => {
     return content.replace('@vitejs/plugin-react', '@vitejs/plugin-react-swc')
   })
-}
-
-function editFile(file: string, callback: (content: string) => string) {
-  const content = fs.readFileSync(file, 'utf-8')
-  fs.writeFileSync(file, callback(content), 'utf-8')
 }
 
 init().catch((e) => {
