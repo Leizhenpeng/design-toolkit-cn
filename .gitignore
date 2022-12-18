@@ -6,3 +6,5 @@ dist
 .idea
 .fleet
 /.vscode/
+
+/docs/.vitepress/cache/*
