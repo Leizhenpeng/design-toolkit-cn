@@ -5,14 +5,10 @@ import { mkdirpSync, readdirSync, remove, writeFileSync } from 'fs-extra'
 import { afterEach, beforeAll, expect, test } from 'vitest'
 
 const CLI_PATH = join(__dirname, '..')
-
 const projectName = 'test-app'
 const genPath = join(__dirname, projectName)
 
-const run = (
-  args: string[],
-  options: SyncOptions = {},
-): ExecaSyncReturnValue => {
+const run = (args: string[], options: SyncOptions = {}): ExecaSyncReturnValue => {
   return execaCommandSync(`node ${CLI_PATH} ${args.join(' ')}`, options)
 }
 
@@ -35,9 +31,9 @@ const templateFiles = readdirSync(join(CLI_PATH, 'template-vue'))
 beforeAll(() => remove(genPath))
 afterEach(() => remove(genPath))
 
-test('prompts for the project name if none supplied', () => {
+test('prompts for the plugin name if none supplied', () => {
   const { stdout } = run([])
-  expect(stdout).toContain('Project name:')
+  expect(stdout).toContain('Plugin name:')
 })
 
 test('prompts for the framework if none supplied when target dir is current directory', () => {
@@ -58,9 +54,7 @@ test('prompts for the framework on not supplying a value for --template', () => 
 
 test('prompts for the framework on supplying an invalid template', () => {
   const { stdout } = run([projectName, '--template', 'unknown'])
-  expect(stdout).toContain(
-    '"unknown" isn\'t a valid template. Please choose from below:',
-  )
+  expect(stdout).toContain('"unknown" isn\'t a valid template. Please choose from below:')
 })
 
 test('asks to overwrite non-empty target directory', () => {

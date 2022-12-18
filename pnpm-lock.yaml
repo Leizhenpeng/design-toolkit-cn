@@ -18,7 +18,7 @@ importers:
       typescript: ^4.9.4
       vite: ^3.0.0
       vite-node: ^0.25.0
-      vitest: ^0.25.0
+      vitest: ^0.25.8
     devDependencies:
       '@antfu/eslint-config': 0.34.0_ha6vam6werchizxrnqvarmz2zu
       '@changesets/changelog-github': 0.4.7
@@ -38,17 +38,31 @@ importers:
 
   packages/create-kiss:
     specifiers:
+      '@types/cross-spawn': ^6.0.2
+      '@types/fs-extra': ^9.0.13
+      '@types/minimist': ^1.2.2
+      '@types/prompts': ^2.4.2
       cross-spawn: ^7.0.3
+      execa: ^6.1.0
+      fs-extra: ^10.1.0
       kolorist: ^1.6.0
       minimist: ^1.2.7
       prompts: ^2.4.2
       unbuild: ^1.0.2
+      vitest: ^0.25.8
     devDependencies:
+      '@types/cross-spawn': 6.0.2
+      '@types/fs-extra': 9.0.13
+      '@types/minimist': 1.2.2
+      '@types/prompts': 2.4.2
       cross-spawn: 7.0.3
+      execa: 6.1.0
+      fs-extra: 10.1.0
       kolorist: 1.6.0
       minimist: 1.2.7
       prompts: 2.4.2
       unbuild: 1.0.2
+      vitest: 0.25.8
 
   packages/kiss-core:
     specifiers:
@@ -1151,6 +1165,12 @@ packages:
     resolution: {integrity: sha512-KnRanxnpfpjUTqTCXslZSEdLfXExwgNxYPdiO2WGUj8+HDjFi8R3k5RVKPeSCzLjCcshCAtVO2QBbVuAV4kTnw==}
     dev: true
 
+  /@types/cross-spawn/6.0.2:
+    resolution: {integrity: sha512-KuwNhp3eza+Rhu8IFI5HUXRP0LIhqH5cAjubUvGXXthh4YYBuP2ntwEX+Cz8GJoZUHlKo247wPWOfA9LYEq4cw==}
+    dependencies:
+      '@types/node': 18.11.13
+    dev: true
+
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
@@ -1216,6 +1236,13 @@ packages:
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+    dev: true
+
+  /@types/prompts/2.4.2:
+    resolution: {integrity: sha512-TwNx7qsjvRIUv/BCx583tqF5IINEVjCNqg9ofKHRlSoUHE62WBHrem4B1HGXcIrG511v29d1kJ9a/t2Esz7MIg==}
+    dependencies:
+      '@types/node': 18.11.13
+      kleur: 3.0.3
     dev: true
 
   /@types/resolve/1.20.2:
