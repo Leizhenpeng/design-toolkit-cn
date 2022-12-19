@@ -22,6 +22,10 @@
         "bump": "changeset version",
         "release": "pnpm build && pnpm release:only",
         "release:only": "changeset publish --registry=https://registry.npmjs.com/",
+        "docs": "vitepress dev docs",
+        "docs-build": "vitepress build docs",
+        "docs-serve": "vitepress serve docs",
+        "ci-docs": "run-s build docs-build",
         "test": "pnpm -r --workspace-concurrency=1 test",
         "lint": "eslint --ignore-path .gitignore '**/*.{js,ts,html,md}'",
         "lint:fix": "pnpm run lint --fix",
@@ -59,5 +63,8 @@
     },
     "lint-staged": {
         "*.{js,ts,html,md}": "eslint --fix"
+    },
+    "dependencies": {
+        "vitepress": "1.0.0-alpha.32"
     }
 }
