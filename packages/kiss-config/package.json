@@ -1,0 +1,74 @@
+{
+  "name": "unplugin-kiss-config",
+  "version": "0.1.0",
+  "keywords": [
+    "unplugin",
+    "esbuild",
+    "rollup",
+    "vite",
+    "webpack"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./types": {
+      "require": "./dist/types.js",
+      "import": "./dist/types.mjs"
+    },
+    "./*": "./*",
+    "./esbuild": {
+      "require": "./dist/esbuild.js",
+      "import": "./dist/esbuild.mjs"
+    },
+    "./rollup": {
+      "require": "./dist/rollup.js",
+      "import": "./dist/rollup.mjs"
+    },
+    "./vite": {
+      "require": "./dist/vite.js",
+      "import": "./dist/vite.mjs"
+    },
+    "./webpack": {
+      "require": "./dist/webpack.js",
+      "import": "./dist/webpack.mjs"
+    }
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch src"
+  },
+  "tsup": {
+    "entryPoints": [
+      "src/*.ts"
+    ],
+    "clean": true,
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "dts": true
+  },
+  "dependencies": {
+    "unplugin": "^1.0.1"
+  },
+  "devDependencies": {
+    "tsup": "6",
+    "typescript": "^4.9.4"
+  }
+}
