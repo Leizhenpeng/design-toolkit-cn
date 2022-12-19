@@ -9,7 +9,7 @@
 ## kiss 和他的朋友们
 
 - [kiss](packages/kiss-core) 🍶 同时支持masterGo、jsDesign以及Figma插件开发适配器
-- [create-kiss]() 🚀 创建Kiss项目的最佳伴侣
+- [create-kiss](package/create-kiss) 🚀 创建Kiss项目的最佳伴侣
 - [kiss-msg](packages/kiss-msg) 🍭 帮助设计插件中的CODE与UI实现更优雅通信 Power By Kiss ~
 - [kiss-pay]() 🎁 便捷开发者维护自己的商业订阅生态
 - [kiss-eye]() 🎯 插件运营数据埋点工具
