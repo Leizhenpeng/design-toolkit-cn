@@ -8,6 +8,7 @@ import prompts from 'prompts'
 import { blue, cyan, green, lightGreen, lightRed, magenta, red, reset, yellow } from 'kolorist'
 import { copy, editFile, emptyDir, formatTargetDir, isEmpty } from './util/file'
 import { isValidPackageName, toValidPackageName } from './util/packageName'
+import banner from './util/banner'
 
 // Avoids autoconversion to number of the project name by defining that the args
 // non associated with an option ( _ ) needs to be parsed as a string. See #4606
@@ -186,6 +187,7 @@ const renameFiles: Record<string, string | undefined> = {
 const defaultTargetDir = 'kiss-plugin'
 
 async function init() {
+  console.log(banner())
   const argTargetDir = formatTargetDir(argv._[0])
   const argTemplate = argv.template || argv.t
 

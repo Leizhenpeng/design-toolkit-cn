@@ -31,6 +31,11 @@ const templateFiles = readdirSync(join(CLI_PATH, 'template-vue'))
 beforeAll(() => remove(genPath))
 afterEach(() => remove(genPath))
 
+test('show banner', () => {
+  const { stdout } = run([])
+  expect(stdout).toContain('Kiss.js - The Efficient Plugin Development Framework')
+})
+
 test('prompts for the plugin name if none supplied', () => {
   const { stdout } = run([])
   expect(stdout).toContain('Plugin name:')

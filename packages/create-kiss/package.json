@@ -36,11 +36,13 @@
   "devDependencies": {
     "@types/cross-spawn": "^6.0.2",
     "@types/fs-extra": "^9.0.13",
+    "@types/gradient-string": "^1.1.2",
     "@types/minimist": "^1.2.2",
     "@types/prompts": "^2.4.2",
     "cross-spawn": "^7.0.3",
     "execa": "^6.1.0",
     "fs-extra": "^10.1.0",
+    "gradient-string": "^2.0.2",
     "kolorist": "^1.6.0",
     "minimist": "^1.2.7",
     "prompts": "^2.4.2",
