@@ -15,7 +15,7 @@
     },
     "packageManager": "pnpm@7.16.1",
     "scripts": {
-        "build": "pnpm --filter kiss-core --filter kiss-msg run build ",
+        "build": "pnpm --filter kiss-core --filter kiss-msg --filter unplugin-kiss-config run build ",
         "in:mode:beta": "pnpm changeset pre enter beta",
         "out:mode:beta": "pnpm changeset pre exit beta",
         "changeset": "changeset",
