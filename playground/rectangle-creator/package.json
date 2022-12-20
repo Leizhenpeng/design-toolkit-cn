@@ -4,6 +4,7 @@
     "license": "MIT",
     "author": "Leizhenpeng <laolei@forkway.cn>",
     "description": "Quick start a design plugin using Vite and React.",
+    "private": true,
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Leizhenpeng/Leizhenpeng/awesome-kiss.git",
