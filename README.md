@@ -13,7 +13,7 @@
 - [kiss-msg](packages/kiss-msg) 🍭 帮助设计插件中的CODE与UI实现更优雅通信 Power By Kiss ~
 - [kiss-pay]() 🎁 便捷开发者维护自己的商业订阅生态
 - [kiss-eye]() 🎯 插件运营数据埋点工具
-- [unplugin-kiss-config](packages/unplugin-kiss-config) - 🍙 自动生成多个平台配置文件的打包插件
+- [unplugin-kiss-config](packages/kiss-config) - 🍙 自动生成多个平台配置文件的打包插件
 
 <br>
 
@@ -23,7 +23,7 @@
 | ----------------------------------------------- |:---------------------------------------------------------------------------------------------------------|
 | [kiss](packages/kiss-core)                           | <a href="https://www.npmjs.com/package/kiss-core"><img src="https://img.shields.io/npm/v/kiss-core?color=CF0A0A&amp;label=" alt="NPM version"></a>|
 | [kiss-msg](packages/kiss-msg) |<a href="https://www.npmjs.com/package/kiss-msg"><img src="https://img.shields.io/npm/v/kiss-msg?color=CF0A0A&amp;label=" alt="NPM version"></a> |
-| [unplugin-kiss-config](packages/unplugin-kiss-config) |<a href="https://www.npmjs.com/package/unplugin-kiss-config"><img src="https://img.shields.io/npm/v/unplugin-kiss-config?color=CF0A0A&amp;label=" alt="NPM version"></a> |
+| [unplugin-kiss-config](packages/kiss-config) |<a href="https://www.npmjs.com/package/unplugin-kiss-config"><img src="https://img.shields.io/npm/v/unplugin-kiss-config?color=CF0A0A&amp;label=" alt="NPM version"></a> |
 
 
 ## [Awesome Kiss](https://github.com/Leizhenpeng/awesome-kiss)

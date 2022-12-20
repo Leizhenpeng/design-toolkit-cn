@@ -2,6 +2,15 @@
     "name": "unplugin-kiss-config",
     "description": "🍙 自动生成figma,masterGo,jsDesign多个平台manifest.json的打包插件",
     "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Leizhenpeng/design-tooltik-cn.git",
+        "directory": "packages/kiss-config"
+    },
+    "bugs": {
+        "url": "https://github.com/Leizhenpeng/design-tooltik-cn/issues"
+    },
+    "homepage": "https://github.com/Leizhenpeng/design-tooltik-cn/tree/main/packages/kiss-core#readme",
     "keywords": [
         "unplugin",
         "esbuild",
