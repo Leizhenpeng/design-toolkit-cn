@@ -2,6 +2,41 @@
 # unplugin-kiss-config
 > 🍙 自动生成figma,masterGo,jsDesign多个平台manifest.json的打包插件
 
+
+
+## Add config in package.json
+```json
+...
+   "pluginInfo": {
+        "name": "Rectangle Creator",
+        "api": "1.0.0",
+        "id": {
+            "masterGo": "80090183159920",
+            "figma": "1183407018802193143",
+            "jsDesign": "_Cm929J-cu10cmqrzbnIS"
+        },
+        "editorType": {
+            "masterGo": [
+                "masterGo"
+            ],
+            "figma": [
+                "figma",
+                "figjam"
+            ],
+            "jsDesign": [
+                "jsDesign"
+            ]
+        }
+    },
+...
+```
+
+## Install
+
+```sh
+npm i unplugin-kiss-config
+```
+
 ## Option
 ```
 {
@@ -10,11 +45,6 @@
 }
 ```
 
-## Install
-
-```sh
-npm i unplugin-kiss-config
-```
 
 <details>
 <summary>esbuild</summary><br>
