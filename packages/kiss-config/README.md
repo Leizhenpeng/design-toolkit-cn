@@ -1,4 +1,14 @@
+
 # unplugin-kiss-config
+> 🍙 自动生成figma,masterGo,jsDesign多个平台manifest.json的打包插件
+
+## Option
+```
+{
+  outDir:'string' //自动生成配置文件的目录名称,默认为'plugin'
+  client:'figma' | 'masterGo' | 'jsDesign' //平台名称,建议通过环境变量来设置 process.env.CLIENT_ENV || 'figma'
+}
+```
 
 ## Install
 
