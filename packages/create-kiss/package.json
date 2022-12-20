@@ -1,0 +1,52 @@
+{
+  "name": "creat-kiss",
+  "version": "4.0.0",
+  "type": "module",
+  "license": "MIT",
+  "author": "RiverRay",
+  "bin": {
+    "creat-kiss": "index.js",
+    "ck": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template-*",
+    "dist"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leizhenpeng/design-tooltik-cn.git",
+    "directory": "packages/creat-kiss"
+  },
+  "bugs": {
+    "url": "https://github.com/Leizhenpeng/design-tooltik-cn/issues"
+  },
+  "homepage": "https://github.com/Leizhenpeng/design-tooltik-cn/tree/main/packages/creat-kiss#readme",
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.2",
+    "@types/fs-extra": "^9.0.13",
+    "@types/gradient-string": "^1.1.2",
+    "@types/minimist": "^1.2.2",
+    "@types/prompts": "^2.4.2",
+    "cross-spawn": "^7.0.3",
+    "execa": "^6.1.0",
+    "fs-extra": "^10.1.0",
+    "gradient-string": "^2.0.2",
+    "kolorist": "^1.6.0",
+    "minimist": "^1.2.7",
+    "prompts": "^2.4.2",
+    "unbuild": "^1.0.2",
+    "vitest": "^0.25.8"
+  }
+}
