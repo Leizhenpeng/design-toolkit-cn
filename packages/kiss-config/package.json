@@ -1,7 +1,7 @@
 {
     "name": "unplugin-kiss-config",
     "description": "🍙 自动生成figma,masterGo,jsDesign多个平台manifest.json的打包插件",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Leizhenpeng/design-tooltik-cn.git",

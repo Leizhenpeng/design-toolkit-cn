@@ -1,5 +1,11 @@
 # unplugin-kiss-config
 
+## 0.1.1
+
+### Patch Changes
+
+-   [`6767b8e`](https://github.com/Leizhenpeng/design-toolkit-cn/commit/6767b8e75f4f3bb1d3ac7d7845b71052a3a4c558) Thanks [@Leizhenpeng](https://github.com/Leizhenpeng)! - add github url
+
 ## 0.1.0
 
 ### Minor Changes
