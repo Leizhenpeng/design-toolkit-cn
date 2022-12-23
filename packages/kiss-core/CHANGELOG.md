@@ -1,5 +1,11 @@
 # kiss-core
 
+## 0.2.3
+
+### Patch Changes
+
+-   [`0fad37c`](https://github.com/Leizhenpeng/design-toolkit-cn/commit/0fad37c49dfc76031126464b1d32a0cd62882eeb) Thanks [@Leizhenpeng](https://github.com/Leizhenpeng)! - update mg type dev
+
 ## 0.2.2
 
 ### Patch Changes

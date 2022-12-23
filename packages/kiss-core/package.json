@@ -1,6 +1,6 @@
 {
     "name": "kiss-core",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "🍶一套兼容masterGo、jsDesign以及Figma的插件开发环境",
     "main": "dist/index.js",
     "author": "RiverRay",
