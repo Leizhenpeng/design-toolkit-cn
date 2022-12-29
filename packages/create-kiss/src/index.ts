@@ -43,16 +43,23 @@ interface Framework {
   color: ColorFunc
 }
 
+interface WasmTool {
+  name: string
+  display: string
+  color: ColorFunc
+  describe: string
+}
+
 const FRAMEWORKS: Framework[] = [
-  {
-    name: 'vanilla',
-    display: 'Vanilla',
-    color: yellow,
-  },
   {
     name: 'vue',
     display: 'Vue',
     color: green,
+  },
+  {
+    name: 'svelte',
+    display: 'Svelte',
+    color: red,
   },
   {
     name: 'react',
@@ -65,9 +72,24 @@ const FRAMEWORKS: Framework[] = [
     color: magenta,
   },
   {
-    name: 'svelte',
-    display: 'Svelte',
-    color: red,
+    name: 'vanilla',
+    display: 'Vanilla',
+    color: yellow,
+  },
+]
+
+const WASMTOOLS: WasmTool[] = [
+  {
+    name: 'rust',
+    display: 'rust-wasm',
+    color: yellow,
+    describe: 'Using Rust and WebAssembly together',
+  },
+  {
+    name: 'ts',
+    display: 'assemblyScript',
+    color: green,
+    describe: 'A TypeScript-like language for WebAssembly',
   },
 ]
 
@@ -88,7 +110,7 @@ async function init() {
   let targetDir = argTargetDir || defaultTargetDir
   const getPluginName = () => (targetDir === '.' ? path.basename(path.resolve()) : targetDir)
 
-  let result: prompts.Answers<'pluginName' | 'overwrite' | 'packageName' | 'needsUI' | 'framework'>
+  let result: prompts.Answers<'pluginName' | 'overwrite' | 'packageName' | 'needsUI' | 'framework' | 'needsWasm' | 'wasmtool' | 'needsMenu'>
 
   try {
     result = await prompts(
@@ -153,6 +175,47 @@ async function init() {
               value: framework,
             }
           }),
+        },
+        {
+          name: 'needsWasm',
+          type: () => {
+            return isFeatureFlagsUsed ? null : 'toggle'
+          },
+          message: reset('Need WebAssembly?'),
+          initial: true,
+          active: 'Yes',
+          inactive: 'No',
+        },
+        {
+          type: (prev, values) => {
+            if (values.needsWasm === false)
+              return null
+            return isFeatureFlagsUsed ? null : 'select'
+          },
+          name: 'wasmtool',
+          message:
+            typeof argTemplate === 'string' && !TEMPLATES.includes(argTemplate)
+              ? reset(`"${argTemplate}" isn't a valid wasm tool. Please choose from below: `)
+              : reset('Select a wasm tool:'),
+          initial: 0,
+          choices: WASMTOOLS.map((wasmtool) => {
+            const frameworkColor = wasmtool.color
+            return {
+              title: frameworkColor(wasmtool.display || wasmtool.name),
+              value: wasmtool,
+              description: wasmtool.describe,
+            }
+          }),
+        },
+        {
+          name: 'needsMenu',
+          type: () => {
+            return isFeatureFlagsUsed ? null : 'toggle'
+          },
+          message: reset('Need Menu?'),
+          initial: true,
+          active: 'Yes',
+          inactive: 'No',
         },
       ],
       {
