@@ -2,7 +2,7 @@ node_modules
 dist
 
 .DS_Store
-
+plugin
 .idea
 .fleet
 /.vscode/

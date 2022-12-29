@@ -2,34 +2,45 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import spawn from 'cross-spawn'
 import minimist from 'minimist'
+import { cyan, green, magenta, red, reset, yellow } from 'kolorist'
 import prompts from 'prompts'
-import { blue, cyan, green, lightGreen, lightRed, magenta, red, reset, yellow } from 'kolorist'
+import banner from './util/banner'
 import { copy, editFile, emptyDir, formatTargetDir, isEmpty } from './util/file'
 import { isValidPackageName, toValidPackageName } from './util/packageName'
-import banner from './util/banner'
 
 // Avoids autoconversion to number of the project name by defining that the args
 // non associated with an option ( _ ) needs to be parsed as a string. See #4606
 const argv = minimist<{
   t?: string
   template?: string
-}>(process.argv.slice(2), { string: ['_'] })
+}>(process.argv.slice(2), {
+  string: ['_'],
+  alias: {
+    t: 'template',
+    ui: 'framework',
+    wasm: 'wasmtool',
+  },
+})
 const cwd = process.cwd()
+// possible options:
+// --default
+// --framework (vue, react, svelte) / --ui
+// --wasmtool (rust, ts) / --wasm
+// --menu
+// --with-tests / --tests (equals to `--vitest --cypress`)
+// --force (for force overwriting)
+// if any of the feature flags is set, we would skip the feature prompts
 
+// if any of the feature flags is set, we would skip the feature prompts
+const isFeatureFlagsUsed = typeof (argv.default ?? argv.framework ?? argv.wasmtool ?? argv.menu ?? argv.withTests) === 'string'
+
+console.log('isFeatureFlagsUsed', isFeatureFlagsUsed)
 type ColorFunc = (str: string | number) => string
 interface Framework {
   name: string
   display: string
   color: ColorFunc
-  variants: FrameworkVariant[]
-}
-interface FrameworkVariant {
-  name: string
-  display: string
-  color: ColorFunc
-  customCommand?: string
 }
 
 const FRAMEWORKS: Framework[] = [
@@ -37,148 +48,30 @@ const FRAMEWORKS: Framework[] = [
     name: 'vanilla',
     display: 'Vanilla',
     color: yellow,
-    variants: [
-      {
-        name: 'vanilla',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
-        name: 'vanilla-ts',
-        display: 'TypeScript',
-        color: blue,
-      },
-    ],
   },
   {
     name: 'vue',
     display: 'Vue',
     color: green,
-    variants: [
-      {
-        name: 'vue',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
-        name: 'vue-ts',
-        display: 'TypeScript',
-        color: blue,
-      },
-      {
-        name: 'custom-create-vue',
-        display: 'Customize with create-vue ↗',
-        color: green,
-        customCommand: 'npm create vue@latest TARGET_DIR',
-      },
-      {
-        name: 'custom-nuxt',
-        display: 'Nuxt ↗',
-        color: lightGreen,
-        customCommand: 'npm exec nuxi init TARGET_DIR',
-      },
-    ],
   },
   {
     name: 'react',
     display: 'React',
     color: cyan,
-    variants: [
-      {
-        name: 'react',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
-        name: 'react-ts',
-        display: 'TypeScript',
-        color: blue,
-      },
-      {
-        name: 'react-swc',
-        display: 'JavaScript + SWC',
-        color: yellow,
-      },
-      {
-        name: 'react-swc-ts',
-        display: 'TypeScript + SWC',
-        color: blue,
-      },
-    ],
   },
   {
     name: 'preact',
     display: 'Preact',
     color: magenta,
-    variants: [
-      {
-        name: 'preact',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
-        name: 'preact-ts',
-        display: 'TypeScript',
-        color: blue,
-      },
-    ],
-  },
-  {
-    name: 'lit',
-    display: 'Lit',
-    color: lightRed,
-    variants: [
-      {
-        name: 'lit',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
-        name: 'lit-ts',
-        display: 'TypeScript',
-        color: blue,
-      },
-    ],
   },
   {
     name: 'svelte',
     display: 'Svelte',
     color: red,
-    variants: [
-      {
-        name: 'svelte',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
-        name: 'svelte-ts',
-        display: 'TypeScript',
-        color: blue,
-      },
-      {
-        name: 'custom-svelte-kit',
-        display: 'SvelteKit ↗',
-        color: red,
-        customCommand: 'npm create svelte@latest TARGET_DIR',
-      },
-    ],
-  },
-  {
-    name: 'others',
-    display: 'Others',
-    color: reset,
-    variants: [
-      {
-        name: 'creat-kiss-extra',
-        display: 'creat-kiss-extra ↗',
-        color: reset,
-        customCommand: 'npm create kiss-extra@latest TARGET_DIR',
-      },
-    ],
   },
 ]
 
-const TEMPLATES = FRAMEWORKS.map(f => (f.variants && f.variants.map(v => v.name)) || [f.name]).reduce((a, b) => a.concat(b), [])
+const TEMPLATES = FRAMEWORKS.map(f => [f.name]).reduce((a, b) => a.concat(b), [])
 
 const renameFiles: Record<string, string | undefined> = {
   _gitignore: '.gitignore',
@@ -188,13 +81,14 @@ const defaultTargetDir = 'kiss-plugin'
 
 async function init() {
   console.log(banner())
+
   const argTargetDir = formatTargetDir(argv._[0])
   const argTemplate = argv.template || argv.t
 
   let targetDir = argTargetDir || defaultTargetDir
   const getPluginName = () => (targetDir === '.' ? path.basename(path.resolve()) : targetDir)
 
-  let result: prompts.Answers<'pluginName' | 'overwrite' | 'packageName' | 'framework' | 'variant'>
+  let result: prompts.Answers<'pluginName' | 'overwrite' | 'packageName' | 'needsUI' | 'framework'>
 
   try {
     result = await prompts(
@@ -231,7 +125,21 @@ async function init() {
           validate: dir => isValidPackageName(dir) || 'Invalid package.json name',
         },
         {
-          type: argTemplate && TEMPLATES.includes(argTemplate) ? null : 'select',
+          name: 'needsUI',
+          type: () => {
+            return isFeatureFlagsUsed ? null : 'toggle'
+          },
+          message: reset('Need UI?'),
+          initial: true,
+          active: 'Yes',
+          inactive: 'No',
+        },
+        {
+          type: (prev, values) => {
+            if (values.needsUI === false)
+              return null
+            return argTemplate && TEMPLATES.includes(argTemplate) ? null : 'select'
+          },
           name: 'framework',
           message:
             typeof argTemplate === 'string' && !TEMPLATES.includes(argTemplate)
@@ -245,19 +153,6 @@ async function init() {
               value: framework,
             }
           }),
-        },
-        {
-          type: (framework: Framework) => (framework && framework.variants ? 'select' : null),
-          name: 'variant',
-          message: reset('Select a variant:'),
-          choices: (framework: Framework) =>
-            framework.variants.map((variant) => {
-              const variantColor = variant.color
-              return {
-                title: variantColor(variant.display || variant.name),
-                value: variant.name,
-              }
-            }),
         },
       ],
       {
@@ -273,7 +168,7 @@ async function init() {
   }
 
   // user choice associated with prompts
-  const { framework, overwrite, packageName, variant } = result
+  const { framework, overwrite, packageName } = result
 
   const root = path.join(cwd, targetDir)
 
@@ -283,7 +178,7 @@ async function init() {
     fs.mkdirSync(root, { recursive: true })
 
   // determine template
-  let template: string = variant || framework?.name || argTemplate
+  let template: string = framework?.name || argTemplate
   let isReactSwc = false
   if (template.includes('-swc')) {
     isReactSwc = true
@@ -292,35 +187,6 @@ async function init() {
 
   const pkgInfo = pkgFromUserAgent(process.env.npm_config_user_agent)
   const pkgManager = pkgInfo ? pkgInfo.name : 'npm'
-  const isYarn1 = pkgManager === 'yarn' && pkgInfo?.version.startsWith('1.')
-
-  const { customCommand } = FRAMEWORKS.flatMap(f => f.variants).find(v => v.name === template) ?? {}
-
-  if (customCommand) {
-    const fullCustomCommand = customCommand
-      .replace('TARGET_DIR', targetDir)
-      .replace(/^npm create/, `${pkgManager} create`)
-      // Only Yarn 1.x doesn't support `@version` in the `create` command
-      .replace('@latest', () => (isYarn1 ? '' : '@latest'))
-      .replace(/^npm exec/, () => {
-        // Prefer `pnpm dlx` or `yarn dlx`
-        if (pkgManager === 'pnpm')
-          return 'pnpm dlx'
-
-        if (pkgManager === 'yarn' && !isYarn1)
-          return 'yarn dlx'
-
-        // Use `npm exec` in all other cases,
-        // including Yarn 1.x and other custom npm clients.
-        return 'npm exec'
-      })
-
-    const [command, ...args] = fullCustomCommand.split(' ')
-    const { status } = spawn.sync(command, args, {
-      stdio: 'inherit',
-    })
-    process.exit(status ?? 0)
-  }
 
   console.log(`\nScaffolding project in ${root}...`)
 
