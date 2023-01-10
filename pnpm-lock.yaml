@@ -8,7 +8,7 @@ importers:
       '@changesets/changelog-github': ^0.4.7
       '@changesets/cli': ^2.25.2
       '@mastergo/plugin-typings': ^1.12.0
-      '@types/fs-extra': ^9.0.13
+      '@types/fs-extra': ^11.0.0
       '@types/lodash-es': ^4.17.6
       '@types/node': ^18.0.0
       eslint: ^8.29.0
@@ -24,7 +24,7 @@ importers:
       '@changesets/changelog-github': 0.4.7
       '@changesets/cli': 2.25.2
       '@mastergo/plugin-typings': 1.12.0
-      '@types/fs-extra': 9.0.13
+      '@types/fs-extra': 11.0.0
       '@types/lodash-es': 4.17.6
       '@types/node': 18.11.13
       eslint: 8.29.0
@@ -1235,6 +1235,13 @@ packages:
     resolution: {integrity: sha512-KnRanxnpfpjUTqTCXslZSEdLfXExwgNxYPdiO2WGUj8+HDjFi8R3k5RVKPeSCzLjCcshCAtVO2QBbVuAV4kTnw==}
     dev: true
 
+  /@types/fs-extra/11.0.0:
+    resolution: {integrity: sha512-zdV5odfHf95B4qr6bdpshG4VMm/3xgnPhSJLa3xh75CYr35e34k+4FQli82Q48sPqwHazJGy+6+jl4T+Vw1AMg==}
+    dependencies:
+      '@types/jsonfile': 6.1.1
+      '@types/node': 18.11.13
+    dev: true
+
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
@@ -1260,6 +1267,12 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/jsonfile/6.1.1:
+    resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
+    dependencies:
+      '@types/node': 18.11.13
     dev: true
 
   /@types/lodash-es/4.17.6:
