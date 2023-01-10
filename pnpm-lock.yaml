@@ -17,8 +17,8 @@ importers:
       terser: ^5.16.1
       typescript: ^4.9.4
       vite: ^3.0.0
-      vite-node: ^0.26.0
-      vitest: ^0.26.0
+      vite-node: ^0.27.0
+      vitest: ^0.27.0
     devDependencies:
       '@antfu/eslint-config': 0.34.0_ha6vam6werchizxrnqvarmz2zu
       '@changesets/changelog-github': 0.4.7
@@ -33,8 +33,8 @@ importers:
       terser: 5.16.1
       typescript: 4.9.4
       vite: 3.2.5_2jljxqqm3icfr33rwkwj4ubglu
-      vite-node: 0.26.0_2jljxqqm3icfr33rwkwj4ubglu
-      vitest: 0.26.0_terser@5.16.1
+      vite-node: 0.27.0_2jljxqqm3icfr33rwkwj4ubglu
+      vitest: 0.27.0_terser@5.16.1
 
   packages/kiss-config:
     specifiers:
@@ -95,7 +95,7 @@ importers:
       rimraf: ^3.0.2
       tsup: ^6.0.0
       typescript: ^4.9.4
-      vitest: ^0.26.0
+      vitest: ^0.27.0
     dependencies:
       eventemitter3: 5.0.0
       kiss-core: link:../kiss-core
@@ -108,7 +108,7 @@ importers:
       rimraf: 3.0.2
       tsup: 6.5.0_typescript@4.9.4
       typescript: 4.9.4
-      vitest: 0.26.0
+      vitest: 0.27.0
 
   playground/rectangle-creator:
     specifiers:
@@ -6155,14 +6155,16 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-node/0.26.0_2jljxqqm3icfr33rwkwj4ubglu:
-    resolution: {integrity: sha512-nLtHWCv6reONl1oFsKhQ/LT7n3UNLpvVARAJlmGrQV6qSElht/9AdN41Pa+WSkw2Winh682UzM0Yw0GNlfqejw==}
+  /vite-node/0.27.0_2jljxqqm3icfr33rwkwj4ubglu:
+    resolution: {integrity: sha512-O1o9joT0qCGx5Om6W0VNLr7M00ttrnFlfZX2d+oxt2T9oZ9DvYSv8kDRhNJDVhAgNgUm3Tc0h/+jppNf3mVKbA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     dependencies:
+      cac: 6.7.14
       debug: 4.3.4
       mlly: 1.0.0
       pathe: 0.2.0
+      picocolors: 1.0.0
       source-map: 0.6.1
       source-map-support: 0.5.21
       vite: 4.0.1_2jljxqqm3icfr33rwkwj4ubglu
@@ -6176,14 +6178,16 @@ packages:
       - terser
     dev: true
 
-  /vite-node/0.26.0_@types+node@18.11.13:
-    resolution: {integrity: sha512-nLtHWCv6reONl1oFsKhQ/LT7n3UNLpvVARAJlmGrQV6qSElht/9AdN41Pa+WSkw2Winh682UzM0Yw0GNlfqejw==}
+  /vite-node/0.27.0_@types+node@18.11.13:
+    resolution: {integrity: sha512-O1o9joT0qCGx5Om6W0VNLr7M00ttrnFlfZX2d+oxt2T9oZ9DvYSv8kDRhNJDVhAgNgUm3Tc0h/+jppNf3mVKbA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     dependencies:
+      cac: 6.7.14
       debug: 4.3.4
       mlly: 1.0.0
       pathe: 0.2.0
+      picocolors: 1.0.0
       source-map: 0.6.1
       source-map-support: 0.5.21
       vite: 4.0.1_@types+node@18.11.13
@@ -6348,8 +6352,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.26.0:
-    resolution: {integrity: sha512-5kUnms5WOa0qrDCJePEPB13v9mhr+ZT1Qy0qNg0eVj1X7/Fx4GY4L1e5s3OH+BQ/J7M5WtaKsUGv9l1pbC7v2Q==}
+  /vitest/0.27.0:
+    resolution: {integrity: sha512-BnOa7T6CnXVC6UgcAsvFOZ2Dtvqkt+/Nl6CRgh4qVT70vElf65XwEL6zMRyTF+h2QXJziEkxYdrLo5WCxckMLQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -6375,16 +6379,18 @@ packages:
       '@types/node': 18.11.13
       acorn: 8.8.1
       acorn-walk: 8.2.0
+      cac: 6.7.14
       chai: 4.3.7
       debug: 4.3.4
       local-pkg: 0.4.2
+      picocolors: 1.0.0
       source-map: 0.6.1
       strip-literal: 1.0.0
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
       vite: 4.0.1_@types+node@18.11.13
-      vite-node: 0.26.0_@types+node@18.11.13
+      vite-node: 0.27.0_@types+node@18.11.13
     transitivePeerDependencies:
       - less
       - sass
@@ -6394,8 +6400,8 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.26.0_terser@5.16.1:
-    resolution: {integrity: sha512-5kUnms5WOa0qrDCJePEPB13v9mhr+ZT1Qy0qNg0eVj1X7/Fx4GY4L1e5s3OH+BQ/J7M5WtaKsUGv9l1pbC7v2Q==}
+  /vitest/0.27.0_terser@5.16.1:
+    resolution: {integrity: sha512-BnOa7T6CnXVC6UgcAsvFOZ2Dtvqkt+/Nl6CRgh4qVT70vElf65XwEL6zMRyTF+h2QXJziEkxYdrLo5WCxckMLQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -6421,16 +6427,18 @@ packages:
       '@types/node': 18.11.13
       acorn: 8.8.1
       acorn-walk: 8.2.0
+      cac: 6.7.14
       chai: 4.3.7
       debug: 4.3.4
       local-pkg: 0.4.2
+      picocolors: 1.0.0
       source-map: 0.6.1
       strip-literal: 1.0.0
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
       vite: 4.0.1_2jljxqqm3icfr33rwkwj4ubglu
-      vite-node: 0.26.0_2jljxqqm3icfr33rwkwj4ubglu
+      vite-node: 0.27.0_2jljxqqm3icfr33rwkwj4ubglu
     transitivePeerDependencies:
       - less
       - sass
