@@ -51,8 +51,8 @@
     ],
     "devDependencies": {
         "@figma/plugin-typings": "^1.57.1",
-        "@jsdesigndeveloper/plugin-typings": "^1.0.9",
-        "@mastergo/plugin-typings": "^1.12.0",
+        "@jsdesigndeveloper/plugin-typings": "^1.0.10",
+        "@mastergo/plugin-typings": "^1.13.0",
         "@types/node": "^18.11.13",
         "@types/rimraf": "^3.0.2",
         "esno": "0.16.3",
