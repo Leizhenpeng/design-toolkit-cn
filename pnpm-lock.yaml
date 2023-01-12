@@ -7,7 +7,7 @@ importers:
       '@antfu/eslint-config': ^0.34.0
       '@changesets/changelog-github': ^0.4.7
       '@changesets/cli': ^2.25.2
-      '@mastergo/plugin-typings': ^1.12.0
+      '@mastergo/plugin-typings': ^1.13.0
       '@types/fs-extra': ^9.0.13
       '@types/lodash-es': ^4.17.6
       '@types/node': ^18.0.0
@@ -23,7 +23,7 @@ importers:
       '@antfu/eslint-config': 0.34.0_ha6vam6werchizxrnqvarmz2zu
       '@changesets/changelog-github': 0.4.7
       '@changesets/cli': 2.25.2
-      '@mastergo/plugin-typings': 1.12.0
+      '@mastergo/plugin-typings': 1.13.0
       '@types/fs-extra': 9.0.13
       '@types/lodash-es': 4.17.6
       '@types/node': 18.11.13
@@ -56,8 +56,8 @@ importers:
   packages/kiss-core:
     specifiers:
       '@figma/plugin-typings': ^1.57.1
-      '@jsdesigndeveloper/plugin-typings': ^1.0.9
-      '@mastergo/plugin-typings': ^1.12.0
+      '@jsdesigndeveloper/plugin-typings': ^1.0.10
+      '@mastergo/plugin-typings': ^1.13.0
       '@types/node': ^18.11.13
       '@types/rimraf': ^3.0.2
       esno: 0.16.3
@@ -70,8 +70,8 @@ importers:
       typescript: ^4.9.4
     devDependencies:
       '@figma/plugin-typings': 1.57.1
-      '@jsdesigndeveloper/plugin-typings': 1.0.9
-      '@mastergo/plugin-typings': 1.12.0
+      '@jsdesigndeveloper/plugin-typings': 1.0.10
+      '@mastergo/plugin-typings': 1.13.0
       '@types/node': 18.11.13
       '@types/rimraf': 3.0.2
       esno: 0.16.3
@@ -1135,8 +1135,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@jsdesigndeveloper/plugin-typings/1.0.9:
-    resolution: {integrity: sha512-rDT5fPH7jwFPZUL3k/is+FiI0hxgKJfpfyZlTnL3BpthwvNBHpJcMCAAUhb8Skib251KzSEJhJNgUmgdFJ2BlQ==}
+  /@jsdesigndeveloper/plugin-typings/1.0.10:
+    resolution: {integrity: sha512-O+1moueJ013UWizetxNFKjek3gsQVJMWqkj6qQq9lYeThaIEnvnLC5vUM0G/ELKWhhyFb506OIp5JTepj9W9NQ==}
     dev: true
 
   /@jsdevtools/ez-spawn/3.0.4:
@@ -1184,8 +1184,8 @@ packages:
       read-yaml-file: 1.1.0
     dev: true
 
-  /@mastergo/plugin-typings/1.12.0:
-    resolution: {integrity: sha512-XyXeOl+M/QEP/3gMt4BpSPQIgNybKsFFNT10tVzTgqCekLiaXOqqO2iSW6FMtMQAHT+CEwt457TMGQQgO/kW4g==}
+  /@mastergo/plugin-typings/1.13.0:
+    resolution: {integrity: sha512-2gZHR0uSsCKWwxn3SJIdjFK5amAsHEO+g+64MhhIUBbSjCwaN0RgAvJneVlJviIeBDZE8oHdpOYzZcwTNuOhKA==}
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
