@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import { bgBlue, bgYellow, black } from 'kolorist'
 export const port = parseInt(process.env.PORT || '') || 3303
 export const r = (...args: string[]) => resolve(__dirname, '..', ...args)

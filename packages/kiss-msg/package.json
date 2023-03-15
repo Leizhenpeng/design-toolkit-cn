@@ -18,7 +18,8 @@
     "jsdesign",
     "kiss",
     "plugin",
-    "io"
+    "io",
+    "pixso"
   ],
   "publishConfig": {
     "access": "public"

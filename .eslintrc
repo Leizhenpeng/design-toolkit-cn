@@ -1,4 +1,14 @@
 {
     "extends": "@antfu",
-    "root": true
+    "root": true,
+    "ignorePatterns": [
+        "dist",
+        "node_modules",
+        "public",
+        "tests",
+        "vendor",
+        "webpack.mix.js",
+        "yarn.lock",
+        "playground"
+    ],
 }

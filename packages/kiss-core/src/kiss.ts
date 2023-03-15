@@ -73,4 +73,3 @@ export class Kiss {
     this._client.showUI(args as any)
   }
 }
-

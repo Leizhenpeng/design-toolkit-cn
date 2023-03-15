@@ -1,4 +1,4 @@
-import { execSync } from 'child_process'
+import { execSync } from 'node:child_process'
 import fs, { access } from 'fs-extra'
 import { log, r } from './common'
 
@@ -62,4 +62,3 @@ checkPluginTypes().then(() => {
   genTypeFigma()
   genTypeJsDesign()
 })
-
