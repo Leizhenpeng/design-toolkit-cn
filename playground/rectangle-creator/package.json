@@ -1,110 +1,112 @@
 {
-    "name": "rectangle-creator",
-    "version": "0.0.1",
-    "license": "MIT",
-    "author": "Leizhenpeng <laolei@forkway.cn>",
-    "description": "Quick start a design plugin using Vite and React.",
-    "private": true,
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Leizhenpeng/Leizhenpeng/awesome-kiss.git",
-        "directory": "projects/rectangle-creator"
+  "name": "rectangle-creator",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Leizhenpeng <laolei@forkway.cn>",
+  "description": "Quick start a design plugin using Vite and React.",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leizhenpeng/Leizhenpeng/awesome-kiss.git",
+    "directory": "projects/rectangle-creator"
+  },
+  "pluginInfo": {
+    "name": "Rectangle Creator",
+    "api": "1.0.0",
+    "id": {
+      "masterGo": "80090183159920",
+      "figma": "1183407018802193143",
+      "jsDesign": "_Cm929J-cu10cmqrzbnIS"
     },
-    "pluginInfo": {
-        "name": "Rectangle Creator",
-        "api": "1.0.0",
-        "id": {
-            "masterGo": "80090183159920",
-            "figma": "1183407018802193143",
-            "jsDesign": "_Cm929J-cu10cmqrzbnIS"
-        },
-        "editorType": {
-            "masterGo": [
-                "masterGo"
-            ],
-            "figma": [
-                "figma",
-                "figjam"
-            ],
-            "jsDesign": [
-                "jsDesign"
-            ]
-        }
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "lint-staged": {
-        "*.{js,jsx,ts,tsx,json}": [
-            "eslint --fix"
-        ]
-    },
-    "scripts": {
-        "dev-web": "vite --mode=development",
-        "dev-mg": "cross-env CLIENT_ENV=masterGo CLIENT_SHOW=false npm run dev",
-        "dev-figma": "cross-env CLIENT_ENV=figma npm run dev",
-        "dev-js": "cross-env CLIENT_ENV=jsDesign npm run dev",
-        "dev": "npm run clear&& cross-env NODE_ENV=development run-p dev:*",
-        "dev:restartPlugin": "esno scripts/restartPlugin.ts",
-        "dev:web": "vite build --mode=development",
-        "dev:code": "vite build --mode=development --config=vite.config.code.ts",
-        "----------------": "",
-        "build-all": "cross-env NODE_ENV=production run-s clear-all build-mg build-figma build-js",
-        "build-mg": "cross-env NODE_ENV=production CLIENT_ENV=masterGo run-s clear build:*",
-        "build-figma": "cross-env NODE_ENV=production CLIENT_ENV=figma run-s clear build:*",
-        "build-js": "cross-env NODE_ENV=production CLIENT_ENV=jsDesign run-s clear build:*",
-        "build": "cross-env NODE_ENV=production run-s build:*",
-        "build:prepare": "esno scripts/prepare.ts",
-        "build:web": "vite build",
-        "build:code": "vite build --config=vite.config.code.ts",
-        "----------": "",
-        "lint": "eslint \"**/*.{js,jsx,ts,tsx,json}\"",
-        "format": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --fix",
-        "clear-all": "rimraf plugin/**",
-        "clear": "esno scripts/clearPlugin.ts",
-        "---------": "",
-        "preinstall": "npx only-allow pnpm"
-    },
-    "dependencies": {
-        "kiss-core": "^0.2.4",
-        "kiss-msg": "^0.2.5",
-        "lodash-es": "^4.17.21",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "rollup": "2.79.0"
-    },
-    "devDependencies": {
-        "@types/fs-extra": "^9.0.13",
-        "@types/lodash-es": "^4.17.5",
-        "@types/node": "^16.10.2",
-        "@types/react": "^17.0.37",
-        "@types/react-dom": "^17.0.11",
-        "@types/rimraf": "^3.0.2",
-        "@typescript-eslint/eslint-plugin": "^4.32.0",
-        "@typescript-eslint/parser": "^4.32.0",
-        "@vitejs/plugin-react": "2.2.0",
-        "chokidar": "^3.5.2",
-        "cross-env": "^7.0.3",
-        "eslint": "^7.32.0",
-        "eslint-config-standard": "^16.0.3",
-        "eslint-define-config": "^1.0.9",
-        "eslint-plugin-import": "^2.24.2",
-        "eslint-plugin-json": "^3.1.0",
-        "eslint-plugin-node": "^11.1.0",
-        "eslint-plugin-promise": "^5.1.0",
-        "eslint-plugin-react": "^7.27.1",
-        "esno": "0.10.0",
-        "figmaio": "^0.2.10",
-        "fs-extra": "^10.0.0",
-        "husky": "^7.0.2",
-        "kolorist": "^1.5.0",
-        "lint-staged": "^11.1.2",
-        "npm-run-all": "^4.1.5",
-        "rimraf": "^3.0.2",
-        "terser": "^5.16.1",
-        "typescript": "^4.4.3",
-        "vite": "^3.2.4",
-        "vite-plugin-singlefile": "^0.13.1",
-        "unplugin-kiss-config": "workspace:*"
+    "editorType": {
+      "masterGo": [
+        "masterGo"
+      ],
+      "figma": [
+        "figma",
+        "figjam"
+      ],
+      "jsDesign": [
+        "jsDesign"
+      ]
     }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json}": [
+      "eslint --fix"
+    ]
+  },
+  "scripts": {
+    "dev-web": "vite --mode=development",
+    "dev-mg": "cross-env CLIENT_ENV=masterGo npm run dev",
+    "dev-figma": "cross-env CLIENT_ENV=figma npm run dev",
+    "dev-js": "cross-env CLIENT_ENV=jsDesign npm run dev",
+    "dev": "npm run clear&& cross-env NODE_ENV=development CLIENT_SHOW=false run-p dev:*",
+    "dev:restartPlugin": "esno scripts/restartPlugin.ts",
+    "dev:prepare": "esno scripts/prepare.ts",
+    "dev:web": "vite build --mode=development",
+    "dev:code": "vite build --mode=development --config=vite.config.code.ts",
+    "----------------": "",
+    "build-all": "cross-env NODE_ENV=production run-s clear-all build-mg build-figma build-js",
+    "build-mg": "cross-env NODE_ENV=production CLIENT_ENV=masterGo run-s clear build:*",
+    "build-figma": "cross-env NODE_ENV=production CLIENT_ENV=figma run-s clear build:*",
+    "build-js": "cross-env NODE_ENV=production CLIENT_ENV=jsDesign run-s clear build:*",
+    "build": "cross-env NODE_ENV=production run-s build:*",
+    "build:prepare": "esno scripts/prepare.ts",
+    "build:web": "vite build",
+    "build:code": "vite build --config=vite.config.code.ts",
+    "----------": "",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx,json}\"",
+    "format": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --fix",
+    "clear-all": "rimraf plugin/**",
+    "clear": "esno scripts/clearPlugin.ts",
+    "---------": "",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "dependencies": {
+    "kiss-core": "workspace:*",
+    "kiss-msg": "workspace:*",
+    "lodash-es": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "2.79.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/lodash-es": "^4.17.7",
+    "@types/node": "^16.18.23",
+    "@types/react": "^17.0.55",
+    "@types/react-dom": "^17.0.19",
+    "@types/rimraf": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "@vitejs/plugin-react": "2.2.0",
+    "chokidar": "^3.5.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-define-config": "^1.17.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.32.2",
+    "esno": "0.10.0",
+    "figmaio": "^0.2.10",
+    "fs-extra": "^10.1.0",
+    "husky": "^7.0.4",
+    "kolorist": "^1.7.0",
+    "lint-staged": "^11.2.6",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "rollup-obfuscator": "^3.0.2",
+    "terser": "^5.16.8",
+    "typescript": "^4.9.5",
+    "unplugin-kiss-config": "workspace:*",
+    "vite": "^3.2.5",
+    "vite-plugin-singlefile": "^0.13.3"
+  }
 }

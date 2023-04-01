@@ -37,20 +37,20 @@
     "license": "MIT",
     "devDependencies": {
         "@antfu/eslint-config": "^0.36.0",
-        "@changesets/changelog-github": "^0.4.7",
-        "@changesets/cli": "^2.25.2",
-        "@mastergo/plugin-typings": "^1.12.0",
+        "@changesets/changelog-github": "^0.4.8",
+        "@changesets/cli": "^2.26.1",
+        "@mastergo/plugin-typings": "^1.16.2",
         "@types/fs-extra": "^9.0.13",
         "@types/lodash-es": "^4.17.7",
-        "@types/node": "^18.0.0",
-        "eslint": "^8.29.0",
-        "husky": "^8.0.2",
-        "lint-staged": "^13.1.0",
-        "terser": "^5.16.1",
-        "typescript": "^4.9.4",
-        "vite": "^3.0.0",
-        "vite-node": "^0.26.0",
-        "vitest": "^0.26.0"
+        "@types/node": "^18.15.11",
+        "eslint": "^8.37.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.0",
+        "terser": "^5.16.8",
+        "typescript": "^4.9.5",
+        "vite": "^3.2.5",
+        "vite-node": "^0.26.3",
+        "vitest": "^0.26.3"
     },
     "husky": {
         "hooks": {

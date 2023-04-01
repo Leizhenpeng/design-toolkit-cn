@@ -52,8 +52,8 @@
     "devDependencies": {
         "@figma/plugin-typings": "^1.62.0",
         "@jsdesigndeveloper/plugin-typings": "^1.0.10",
-        "@mastergo/plugin-typings": "^1.14.0",
-        "@types/node": "^18.15.3",
+        "@mastergo/plugin-typings": "^1.16.2",
+        "@types/node": "^18.15.11",
         "@types/rimraf": "^3.0.2",
         "esno": "0.16.3",
         "figmaio": "^0.2.10",
@@ -61,7 +61,7 @@
         "kolorist": "^1.7.0",
         "rimraf": "^3.0.2",
         "ts-node": "^10.9.1",
-        "tsup": "^6.6.3",
+        "tsup": "^6.7.0",
         "typescript": "^4.9.5"
     },
     "publishConfig": {

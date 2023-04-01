@@ -39,6 +39,9 @@ class ApiHandlerDefault extends AbstractHandler {
   }
 }
 
+
+
+
 export const apiHandler = new ApiHandlerMeta()
 apiHandler.setNext(new ApiHandlerDefault())
 
@@ -83,3 +86,24 @@ class EditorTypeHandlerDefault extends AbstractHandler {
 
 export const editorTypeHandler = new EditorTypeHandlerMeta()
 editorTypeHandler.setNext(new EditorTypeHandlerDefault())
+
+class CustomHandleMeta extends AbstractHandler {
+  public handle(pkg: any): any {
+    if (pkg && pkg.pluginInfo && pkg.pluginInfo.custom) {
+      const customPool = pkg.pluginInfo.custom
+      const custom = customPool[clientNow]
+      if (custom)
+        return custom
+    }
+    return super.handle(pkg)
+  }
+}
+
+class CustomHandleDefault extends AbstractHandler {
+  public handle(): any {
+    return {}
+  }
+}
+
+export const customHandler = new CustomHandleMeta()
+customHandler.setNext(new CustomHandleDefault())

@@ -14,9 +14,7 @@ if (!env.inMg) {
     height: 160
   })
 }
-
-io?.send('hook:hello', 'hello from hook')
-
+io?.send('hook:hello', 'hello ss from hook')
 io?.on('create-rectangles', (count) => {
   const nodes = []
   for (let i = 0; i < count; i++) {
@@ -40,4 +38,23 @@ io?.on('create-rectangles', (count) => {
 })
 io?.on('ui:cancel', () => {
   client.closePlugin()
+})
+
+type ExampleMsg = {
+    msg: string
+    data: any
+    id: string
+}
+
+const exampleHandler = async (data: ExampleMsg['data'], id: ExampleMsg['id']) => {
+  return {
+    success: true,
+    data: 'hello from hook'
+  }
+}
+io?.answerBack('hello', (data: any) => {
+  return {
+    success: true,
+    data: 'hello from hook'
+  }
 })

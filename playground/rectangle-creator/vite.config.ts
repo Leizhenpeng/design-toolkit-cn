@@ -1,28 +1,50 @@
 import { defineConfig } from 'vite'
-import reactPlugin from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react'
 import { viteSingleFile } from 'vite-plugin-singlefile'
-import clientNow from './scripts/clientParse'
+import { obfuscator } from 'rollup-obfuscator'
 import path from 'path'
 
+import clientNow from './scripts/clientParse'
+// https://vitejs.dev/config/
+
 const isDev = process.env.NODE_ENV === 'development'
+
 const ifCompress = (fn: () => any, defaultVal: any = {}) => {
-  if (isDev) { return fn() }
+  if (!isDev) return fn()
   return defaultVal
 }
-const config = defineConfig({
+export const commonConfig = () => {
+  return {
+    resolve: {
+      alias: {
+        '@/': `${path.resolve(__dirname, 'src')}/`
+      }
+    }
+  }
+}
+
+export default defineConfig({
+  ...commonConfig(),
   plugins: [
-    reactPlugin(),
-    viteSingleFile()
+    react(),
+    viteSingleFile(),
+    ifCompress(() =>
+      obfuscator({
+        optionsPreset: 'low-obfuscation'
+      })
+    )
   ],
+  esbuild: {
+    drop: ['debugger'],
+    pure: ifCompress(() => {
+      return ['console.log', 'console.error', 'console.warn', 'console.debug', 'console.trace']
+    }, [])
+  },
   build: {
     outDir: `plugin/${clientNow}/ui`,
-    minify: ifCompress(() => 'terser', false),
-    terserOptions: ifCompress(() => ({
-      compress: {
-        drop_console: true
-      }
-    }), null),
+    minify: ifCompress(() => 'esbuild', false),
     sourcemap: isDev,
+    watch: isDev ? {} : null,
     cssCodeSplit: false,
     assetsInlineLimit: 100000000000000000,
     rollupOptions: {
@@ -34,7 +56,4 @@ const config = defineConfig({
       }
     }
   }
-
 })
-
-export default config

@@ -6,10 +6,11 @@ import type { Options } from './types'
 
 import { log, r } from './util/logger'
 import { setClient } from './util/clientParse'
-import { apiHandler, editorTypeHandler, idHandler, nameHandler } from './util/configParser'
+import { apiHandler, customHandler, editorTypeHandler, idHandler, nameHandler } from './util/configParser'
 
 export async function genManifest() {
   const pkg = (await fs.readJSON(r('package.json'))) as typeof PkgType
+  const customManifest = customHandler.handle(pkg)
   const manifest = {
     name: nameHandler.handle(pkg),
     id: idHandler.handle(pkg),
@@ -17,6 +18,7 @@ export async function genManifest() {
     main: 'code/index.js',
     ui: 'ui/index.html',
     editorType: editorTypeHandler.handle(pkg) as any,
+    ...customManifest,
   }
   return manifest
 }

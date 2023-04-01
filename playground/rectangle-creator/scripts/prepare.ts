@@ -9,8 +9,7 @@ function writeManifest () {
 writeManifest()
 
 if (isDev) {
-  chokidar.watch([r('src/manifest.ts'), r('package.json')])
-    .on('change', () => {
-      writeManifest()
-    })
+  chokidar.watch([r('src/manifest.ts'), r('package.json')]).on('change', () => {
+    writeManifest()
+  })
 }

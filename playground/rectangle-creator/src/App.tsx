@@ -10,34 +10,47 @@ const App = () => {
     textbox.current = element
   }, [])
 
-  const onCreate = () => {
-    const count = parseInt(textbox.current?.value || '', 10)
-    io?.send('create-rectangles', count)
-  }
+  // const onCreate = () => {
+  //   const count = parseInt(textbox.current?.value || '', 10)
+  //   io?.send('create-rectangles', count)
+  // }
 
-  const onCancel = () => {
-    io?.send('ui:cancel')
-  }
+    type NewType = {
+        msg: string
+        data: number
+        id: string
+    }
+    const onCreate = () => {
+      const count = parseInt(textbox.current?.value || '', 10)
+      io?.send('create-rectangles', count)
+      // io?.queryBack<NewType>('hello', count).then((msg) => {
+      //   console.log('msg', msg)
+      // })
+    }
 
-  useEffect(() => {
-    io?.on('hook:hello', (msg) => {
-      console.log('msg', msg)
-    })
-  }, [])
+    const onCancel = () => {
+      io?.send('ui:cancel')
+    }
 
-  return (
-    <div>
-      <p>
-        Count: <input ref={countRef} />
-      </p>
-      <div>
-        <button id="create" onClick={onCreate}>
-          Create
-        </button>
-        <button onClick={onCancel}>Cancel</button>
-      </div>
-    </div >
-  )
+    useEffect(() => {
+      io?.on('hook:hello', (msg) => {
+        console.log('msg', msg)
+      })
+    }, [])
+
+    return (
+        <div>
+            <p>
+                Count: <input ref={countRef} />
+            </p>
+            <div>
+                <button id="create" onClick={onCreate}>
+                    Create
+                </button>
+                <button onClick={onCancel}>Cancel</button>
+            </div>
+        </div>
+    )
 }
 
 export default App
