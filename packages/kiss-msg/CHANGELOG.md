@@ -1,5 +1,11 @@
 # kiss-msg
 
+## 0.3.0
+
+### Minor Changes
+
+-   [`fd88870`](https://github.com/Leizhenpeng/design-toolkit-cn/commit/fd888709ab09bec2ceebb316a84fdd38fbc83ce4) Thanks [@Leizhenpeng](https://github.com/Leizhenpeng)! - 支持类似远程调用的方法 queryBack+answerBack
+
 ## 0.2.5
 
 ### Patch Changes
