@@ -61,7 +61,7 @@
         "kolorist": "^1.7.0",
         "rimraf": "^3.0.2",
         "ts-node": "^10.9.1",
-        "tsup": "^6.7.0",
+        "tsup": "^7.0.0",
         "typescript": "^4.9.5"
     },
     "publishConfig": {
