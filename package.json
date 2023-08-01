@@ -49,8 +49,8 @@
         "terser": "^5.16.8",
         "typescript": "^4.9.5",
         "vite": "^3.2.5",
-        "vite-node": "^0.26.3",
-        "vitest": "^0.26.3"
+        "vite-node": "^0.34.0",
+        "vitest": "^0.34.0"
     },
     "husky": {
         "hooks": {
