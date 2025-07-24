@@ -36,7 +36,7 @@
     "author": "RiverRay",
     "license": "MIT",
     "devDependencies": {
-        "@antfu/eslint-config": "^0.36.0",
+        "@antfu/eslint-config": "^4.0.0",
         "@changesets/changelog-github": "^0.4.8",
         "@changesets/cli": "^2.26.1",
         "@mastergo/plugin-typings": "^1.16.2",
